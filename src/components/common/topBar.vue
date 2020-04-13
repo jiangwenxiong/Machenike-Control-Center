@@ -9,7 +9,7 @@ export default {
   name: 'TopBar',
   data () {
     return {
-      msg: 'TopBar Is Mounted'
+      msg: 'TopBar Mounted'
     }
   },
   mounted (){

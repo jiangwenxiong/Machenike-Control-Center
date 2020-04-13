@@ -9,12 +9,15 @@ export default {
   name: 'SideBar',
   data () {
     return {
-      msg: 'SideBar Is Mounted'
+      msg: 'SideBar Mounted'
     }
   },
   mounted (){
     var that = this;
     console.log(that.msg)
+  },
+  methods:{
+    
   }
 }
 </script>

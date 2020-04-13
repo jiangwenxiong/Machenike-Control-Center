@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
-    <router-view />
+      <div class="app_top">
+         <TopBar></TopBar>
+      </div> 
+      <div class="app_bottom">
+        <div class="app_sideBox">
+          <SideBar></SideBar>
+        </div>
+        <router-view class="app_routerView" />
+      </div>  
+      
   </div>
 </template>
 
@@ -28,6 +36,25 @@ export default {
   height:100%;
   width:100%;
   overflow: hidden;
-  background: #000;
+  display: flex;
+  flex-direction: column;
 }
+.app_top{
+  height:100px;
+  background: #050b25;
+}
+.app_bottom{
+  flex: 1;
+  display: flex;
+}
+.app_sideBox{
+  height:100%;
+  width:200px;
+  background: #050b25;
+}
+.app_routerView{
+  flex:1;
+  height:100%;
+}
+
 </style>
