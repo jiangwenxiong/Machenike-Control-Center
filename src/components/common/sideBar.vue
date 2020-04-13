@@ -9,8 +9,12 @@ export default {
   name: 'SideBar',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'SideBar Is Mounted'
     }
+  },
+  mounted (){
+    var that = this;
+    console.log(that.msg)
   }
 }
 </script>
@@ -19,4 +23,3 @@ export default {
 <style lang="stylus" scoped>
 
 </style> 
-</style>

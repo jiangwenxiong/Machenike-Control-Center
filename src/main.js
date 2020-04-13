@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import Es6Promise from 'es6-promise'
+
+Es6Promise.polyfill()
+
 
 Vue.config.productionTip = false
 
