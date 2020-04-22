@@ -13,9 +13,9 @@
                 机械师控制中心&nbsp;V0.1
             </div>
             <ul class="topRbox">
-                <li class="topRbtn settingsBtn">
+                <li class="topRbtn settingsBtn" @mousemove="showsettingBox=true;" @mouseout="showsettingBox=false;">
                     <img class="settings" src="../../assets/img/topbar/settings.png" />
-                    <div class="settingsBox">
+                    <div class="settingsBox" v-show="showsettingBox">
                         <div class="settingCon">
                             <div class="settingsItem">
                                 <img class="siIcon siIconB" src="../../assets/img/topbar/ssettingb.png" />
@@ -64,7 +64,8 @@ export default {
   name: 'TopBar',
   data () {
     return {
-      msg: 'TopBar Mounted'
+      msg: 'TopBar Mounted',
+      showsettingBox:false
     }
   },
   mounted (){
@@ -171,7 +172,6 @@ export default {
     position: absolute;
     left: -20px;
     top:36px;
-    display: none;
 }
 .settingCon{
     width: 100%;
