@@ -1,7 +1,62 @@
 <template>
-  <div class="topBar">
-    
-  </div>
+   <div class="topBar">
+            <img class="topmid" src="../../assets/img/topbar/topmid.png" />
+            <ul class="topmid topItemBox">
+                <li class="topItem topItemActive">个人信息</li>
+                <li class="topItem">个人信息</li>
+                <li class="topItem">个人信息</li>
+                <li class="topItem">个人信息</li>
+            </ul>
+            <img class="topleft" src="../../assets/img/topbar/topleft.png" />
+            <img class="topright" src="../../assets/img/topbar/topright.png" />
+            <div class="sysName">
+                机械师控制中心&nbsp;V0.1
+            </div>
+            <ul class="topRbox">
+                <li class="topRbtn settingsBtn">
+                    <img class="settings" src="../../assets/img/topbar/settings.png" />
+                    <div class="settingsBox">
+                        <div class="settingCon">
+                            <div class="settingsItem">
+                                <img class="siIcon siIconB" src="../../assets/img/topbar/ssettingb.png" />
+                                <img class="siIcon siIconW" src="../../assets/img/topbar/ssettingw.png" />
+                                设置
+                            </div>
+                            <div class="settingsItem">
+                                <img class="siIcon siIconB" src="../../assets/img/topbar/slogb.png" />
+                                <img class="siIcon siIconW" src="../../assets/img/topbar/slogw.png" />
+                                更新日志
+                            </div>
+                            <div class="settingsItem">
+                                <img class="siIcon siIconB" src="../../assets/img/topbar/saboutb.png" />
+                                <img class="siIcon siIconW" src="../../assets/img/topbar/saboutw.png" />
+                                关于我们
+                            </div>
+                            <div class="settingsItem">
+                                <img class="siIcon siIconB" src="../../assets/img/topbar/slogoutb.png" />
+                                <img class="siIcon siIconW" src="../../assets/img/topbar/slogoutw.png" />
+                                注销
+                            </div>
+                            <div class="settingsItem noBorder">
+                                <img class="siIcon siIconB" src="../../assets/img/topbar/squitb.png" />
+                                <img class="siIcon siIconW" src="../../assets/img/topbar/squitw.png" />
+                                退出
+                            </div>
+                        </div>
+        
+                    </div>
+
+                </li>
+                <li class="topRbtn">
+                    \<img class="minimize" src="../../assets/img/topbar/minimize.png" />
+                </li>
+                <li class="topRbtn">
+                    \<img class="close" src="../../assets/img/topbar/close.png" />
+                </li>
+            </ul>
+           
+
+        </div>
 </template>
 
 <script>
@@ -21,5 +76,147 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
+.topBar{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    /* overflow: hidden; */
+}
+.topBar img{
+    display: block;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+}
+.topBar .topleft{
+    left:0;
+    
+}
+.topBar .topItemBox{
+    position: absolute;
+    background: #050b24;
+    padding-left: 42px;
+    padding-top: 6px;
+    display: none;
+}
+.topItem{
+    display: inline-block;
+    height:40px;
+    width: 135px;
+    line-height: 40px;
+    position: relative;
+    font-size: 12px;
+    padding-left: 38px;
+    letter-spacing: 2px;
+    color: #10abff;
+    background: url('../../assets/img/base/topItem.png') no-repeat 100% 100%;
+}
+.topItemActive{
+    margin: 0;
+    height:46px;
+    width: 150px;
+    line-height: 46px;
+    padding-left: 42px;
+    background: url('../../assets/img/base/topItema.png') no-repeat 100% 100%;
+}
+.topBar .topmid{
+    left: 186px;
+    height: 52px;
+    width: 724px;
+}
+
+.topBar .topright{
+    right:0;
+    height: 61px;
+}
+.sysName{
+    height: 100%;
+    font-size: 12px;
+	line-height: 50px;
+	letter-spacing: 2px;
+    color: #10abff;
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+.topRbox{
+    height: 50px;
+    width: 160px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.topRbox li{
+    flex: 1;
+    position: relative;
+    color: #10abff;
+    line-height: 50px;
+    cursor: pointer;
+}
+.topRbox li img{
+    position: absolute;
+    top:20px;
+    left:20px;
+    width:16px;
+    height: auto;
+}
+.topRbox li .minimize{
+    top:24px;
+}
+.settingsBox{
+    width:104px;
+    height:150px;
+    position: absolute;
+    left: -20px;
+    top:36px;
+    display: none;
+}
+.settingCon{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url('../../assets/img/login/setbg.png') no-repeat 100% 100%;
+    padding-top:9px
+}
+
+.settingsItem{
+    height:28px;
+    border-bottom:1px solid #10a9fd;
+    width: 103px;
+    margin: 0 auto;
+    position: relative;
+    color: #10a9fd;
+    line-height: 28px;
+    font-size: 12px;
+    padding-left:36px;
+    cursor: pointer;
+}
+.settingsItem .siIcon{
+    height: 12px;
+    width: auto;
+    position: absolute;
+    top: 8px;
+    left: 14px;
+}
+.settingsItem:hover{
+    color: #fff;
+    box-shadow:inset 0px 0px 5px 8px #072649;
+}
+.settingsItem .siIconW{
+    display: none;
+}
+.settingsItem:hover .siIconB{
+    display: none;
+}
+.settingsItem:hover .siIconW{
+    display: block;
+}
+.noBorder{
+    border: none;
+}
+/* topBar end */
+
 
 </style> 

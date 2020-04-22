@@ -77,3 +77,46 @@ body {
     font-family:sans-serif;
     overflow: hidden;
 }
+/* input css start*/
+.loginItem{
+    height: 54px;
+    position: relative;
+    width: 100%;
+    color: #10abff;
+    font-size: 14px;
+    text-align: center;
+    padding-top:10px;
+}
+.loginItem2{
+    padding-top:0;
+    height: 78px;
+}
+.loginItem .tip{
+    font-size:12px;
+    text-align: left;
+    padding-left:2px;
+    margin-bottom: 4px;
+}
+
+.hiddenPwd{
+    position: absolute;
+    top: 38px;
+    right: 20px;
+    cursor: pointer;
+}
+.loginInp{
+    display: block;
+    margin: 0 auto;
+    width:348px;
+    height:46px;
+    border-radius: 2px;
+    background-color: #141a36;
+    color: #10abff;
+    font-size: 14px;
+    padding:0 10px;
+}
+.loginInp:focus{
+     border: solid 1px #10abff;
+}
+
+/* input css end */

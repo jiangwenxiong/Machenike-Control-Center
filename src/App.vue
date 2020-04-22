@@ -1,13 +1,10 @@
 <template>
   <div id="app">
-      <div class="app_top">
-         <TopBar></TopBar>
-      </div> 
-      <div class="app_bottom">
-        <div class="app_sideBox">
+      <TopBar></TopBar>
+     
+      <div class="bottom">
           <SideBar></SideBar>
-        </div>
-        <router-view class="app_routerView" />
+          <router-view class="view" />
       </div>  
       
   </div>
@@ -31,30 +28,20 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  height:100%;
-  width:100%;
+  height:700px;
+  width:1080px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: #050b24;
+  position: relative;
 }
-.app_top{
-  height:100px;
-  background: #050b25;
+.bottom{
+    height: 650px;
+    width: 100%;
+    display: flex;
 }
-.app_bottom{
-  flex: 1;
-  display: flex;
+.view{
+    flex: 1;
+    height: 100%;
 }
-.app_sideBox{
-  height:100%;
-  width:200px;
-  background: #050b25;
-}
-.app_routerView{
-  flex:1;
-  height:100%;
-}
-
 </style>
