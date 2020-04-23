@@ -1,6 +1,6 @@
 <template>
    <div class="topBar">
-            <img class="topmid" src="/static/topmidimg.png" />
+            <img class="topmid" src="../../assets/img/topbar/topmid.png" />
             <ul class="topmid topItemBox">
                 <li class="topItem topItemActive">个人信息</li>
                 <li class="topItem">个人信息</li>
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import Topmid from "@/assets/img/topbar/topmid.png";
 export default {
   name: 'TopBar',
   data () {

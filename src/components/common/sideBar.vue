@@ -1,6 +1,6 @@
 <template>
    <div class="sideBar">
-                <img class="sideBg" src="/static/sideBg.png" />
+                <img class="sideBg" src="../../assets/img/sidebar/sideBg.png" />
                 <ul class="sideBox">
                     <li class="loginCon">
                         <img class="loginIcon" src="../../assets/img/sidebar/loginicon.png" />
