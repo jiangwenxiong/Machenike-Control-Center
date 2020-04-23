@@ -15,14 +15,39 @@ Vue.config.productionTip = false
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   document.title = to.meta.title || '机械师控制中心';
-  next()
+  console.log(store.state.topBarItems);
+  store.commit("setTopList", []);
+  switch (to.name) {
+    case 'Index':
+      store.commit("setTopList", [{
+        name: '个人信息'
+      }]);
+      break;
+    case 'Personal':
+      store.commit("setTopList", [{
+          name: '个人信息'
+        },
+        {
+          name: '个人设置',
+          routerName:'Login'
+        },
+      ]);
+      break;
+
+    default:
+      break;
+  }
+  next();
+  console.log(store.state.topBarItems);
 })
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>',
   store
 })

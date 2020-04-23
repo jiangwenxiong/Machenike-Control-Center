@@ -1,6 +1,6 @@
 <template>
    <div class="sideBar">
-                <img class="sideBg" src="../../assets/img/sidebar/sideBg.png" />
+                <img class="sideBg" src="/static/img/sideBg.png" />
                 <ul class="sideBox">
                     <li class="loginCon">
                         <img class="loginIcon" src="../../assets/img/sidebar/loginicon.png" />
@@ -10,34 +10,46 @@
                         </div>
                         <img class="line lineLong" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon1.png" />
-                        <div class="itemName">硬件监控</div>
+                    <li class="sideItem" @click="itemClick(1)">
+                        <img class="sideActive" v-show="activeIndex == 1" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 1" src="../../assets/img/sidebar/sideicon1.png" />
+                        <img class="icon icon2" v-show="activeIndex == 1" src="../../assets/img/sidebar/sideicon1a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 1 ? '#fff':''}">硬件监控</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon2.png" />
-                        <div class="itemName">游戏加速</div>
+                    <li class="sideItem" @click="itemClick(2)">
+                        <img class="sideActive" v-show="activeIndex == 2" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 2" src="../../assets/img/sidebar/sideicon2.png" />
+                        <img class="icon icon2" v-show="activeIndex == 2" src="../../assets/img/sidebar/sideicon2a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 2 ? '#fff':''}">游戏加速</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon3.png" />
-                        <div class="itemName">灯光控制</div>
+                    <li class="sideItem" @click="itemClick(3)">
+                        <img class="sideActive" v-show="activeIndex == 3" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 3" src="../../assets/img/sidebar/sideicon3.png" />
+                        <img class="icon icon2" v-show="activeIndex == 3" src="../../assets/img/sidebar/sideicon3a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 3 ? '#fff':''}">灯光控制</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon4.png" />
-                        <div class="itemName">官方驱动</div>
+                    <li class="sideItem" @click="itemClick(4)">
+                        <img class="sideActive" v-show="activeIndex == 4" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 4" src="../../assets/img/sidebar/sideicon4.png" />
+                        <img class="icon icon2" v-show="activeIndex == 4" src="../../assets/img/sidebar/sideicon4a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 4 ? '#fff':''}">官方驱动</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon5.png" />
-                        <div class="itemName">硬核软件</div>
+                    <li class="sideItem" @click="itemClick(5)">
+                        <img class="sideActive" v-show="activeIndex == 5" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 5" src="../../assets/img/sidebar/sideicon5.png" />
+                        <img class="icon icon2" v-show="activeIndex == 5" src="../../assets/img/sidebar/sideicon5a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 5 ? '#fff':''}">硬核软件</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
-                    <li class="sideItem">
-                        <img class="icon" src="../../assets/img/sidebar/sideicon6.png" />
-                        <div class="itemName">机友聚集地</div>
+                    <li class="sideItem" @click="itemClick(6)">
+                        <img class="sideActive" v-show="activeIndex == 6" src="../../assets/img/base/sideActive.png" />
+                        <img class="icon" v-show="activeIndex != 6" src="../../assets/img/sidebar/sideicon6.png" />
+                        <img class="icon icon2" v-show="activeIndex == 6" src="../../assets/img/sidebar/sideicon6a.png" />
+                        <div class="itemName" :style="{'color':activeIndex == 6 ? '#fff':''}">机友聚集地</div>
                         <img class="line" src="../../assets/img/sidebar/line.png" />
                     </li>
                 </ul>
@@ -49,15 +61,23 @@ export default {
   name: 'SideBar',
   data () {
     return {
-      msg: 'SideBar Mounted'
+      msg: 'SideBar Mounted',
+      activeIndex:0,
     }
   },
   mounted (){
     var that = this;
     console.log(that.msg)
+    var activeIndex = sessionStorage.getItem('activeIndex');
+    if(activeIndex){
+        that.activeIndex = activeIndex;
+    }
   },
   methods:{
-    
+    itemClick(index){
+        this.activeIndex = index;
+        sessionStorage.setItem('activeIndex',index);
+    }
   }
 }
 </script>
@@ -125,6 +145,20 @@ export default {
     top:15px;
     left: 50px;
 
+}
+.sideItem .icon2{
+    height: 34px;
+    position: absolute;
+    top:10px;
+    left: 40px;
+
+}
+.sideActive{
+    height 62px;
+    width 176px
+    position: absolute;
+    top:-4px;
+    left: 0;
 }
 .itemName{
     position: absolute;

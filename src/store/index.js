@@ -8,7 +8,18 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
         //存放的键值对就是所要管理的状态
-        name:'helloVueX'
+        topBarItems:[]
+    },
+    getters:{
+        getTopList(state){
+            return state.topBarItems;
+        }
+    },
+    mutations:{
+        setTopList(state,data){
+            sessionStorage.setItem('toplist', JSON.stringify(data));
+            state.topBarItems = data;
+        }
     }
 })
 

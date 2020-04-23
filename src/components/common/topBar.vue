@@ -1,11 +1,8 @@
 <template>
    <div class="topBar">
-            <img class="topmid" src="../../assets/img/topbar/topmid.png" />
-            <ul class="topmid topItemBox">
-                <li class="topItem topItemActive">个人信息</li>
-                <li class="topItem">个人信息</li>
-                <li class="topItem">个人信息</li>
-                <li class="topItem">个人信息</li>
+            <img class="topmid" src="/static/img/topmid.png" />
+            <ul class="topmid topItemBox" v-show="topItems.length">
+                <li class="topItem" v-for="item,index in topItems"  @click="itemClick(index,item)"  :class="index==activeIndex?'topItemActive':''">{{item.name}}</li>
             </ul>
             <img class="topleft" src="../../assets/img/topbar/topleft.png" />
             <img class="topright" src="../../assets/img/topbar/topright.png" />
@@ -61,17 +58,32 @@
 
 <script>
 import Topmid from "@/assets/img/topbar/topmid.png";
+import { mapGetters } from 'vuex';
 export default {
   name: 'TopBar',
   data () {
     return {
       msg: 'TopBar Mounted',
-      showsettingBox:false
+      showsettingBox:false,
+      activeIndex:0
+    }
+  },
+   computed: {
+    topItems(){
+         return this.$store.getters.getTopList;
     }
   },
   mounted (){
     var that = this;
     console.log(that.msg)
+  },
+  methods:{
+      itemClick(index,item){
+          this.activeIndex = index;
+          if(item.routerName){
+              this.$router.push({ name: item.routerName});
+          }
+      }
   }
 }
 </script>
@@ -100,7 +112,6 @@ export default {
     background: #050b24;
     padding-left: 42px;
     padding-top: 6px;
-    display: none;
 }
 .topItem{
     display: inline-block;

@@ -19,6 +19,28 @@
         <div class="pre_itemTip">激活码已发送至邮箱</div>
         <div class="pre_testBtn">验证</div>
       </div>
+      <div class="pre_tips">账号绑定</div>
+      <div class="pre_wechat">
+        <img class="per_wechatImg" src="../../assets/img/personal/wechat.png" />
+        <img class="per_bindImg" src="../../assets/img/personal/wechatyes.png" />
+        <div class="pre_bind">绑定</div>
+      </div>
+      <div class="pre_tips">修改密码</div>
+      <div class="pre_item">
+        <div class="pre_itemTip">当前密码</div>
+        <input class="pre_inp" :type="oldPasswordType" name="oldPassword" />
+        <img class="hiddenPwd" @click="changePwd(1)" src="../../assets/img/login/hiddenPwd.png" />
+      </div>
+      <div class="pre_item">
+        <div class="pre_itemTip">新密码</div>
+        <input class="pre_inp" :type="newPasswordType" name="newPassword" />
+        <img class="hiddenPwd" @click="changePwd(2)" src="../../assets/img/login/hiddenPwd.png" />
+      </div>
+      <div class="pre_item">
+        <div class="pre_itemTip">再次输入</div>
+        <input class="pre_inp" :type="newPasswordType2" name="newPassword" />
+        <img class="hiddenPwd" @click="changePwd(3)" src="../../assets/img/login/hiddenPwd.png" />
+      </div>
     </div>
   </div>
 </template>
@@ -28,13 +50,43 @@ export default {
   name: "",
   data() {
     return {
-      msg: ""
+      msg: "",
+      oldPasswordType: "password",
+      newPasswordType: "password",
+      newPasswordType2: "password"
     };
   },
   mounted() {
     var that = this;
   },
-  methods: {}
+  methods: {
+    changePwd(who) {
+      var that = this;
+      switch (who) {
+        case 1:
+          if (that.oldPasswordType == "password") {
+            that.oldPasswordType = "text";
+          } else {
+            that.oldPasswordType = "password";
+          }
+          break;
+        case 2:
+          if (that.newPasswordType == "password") {
+            that.newPasswordType = "text";
+          } else {
+            that.newPasswordType = "password";
+          }
+          break;
+        case 3:
+          if (that.newPasswordType2 == "password") {
+            that.newPasswordType2 = "text";
+          } else {
+            that.newPasswordType2 = "password";
+          }
+          break;
+      }
+    }
+  }
 };
 </script>
 
@@ -46,14 +98,33 @@ export default {
   position relative
   margin 0 auto
   /* background: red; */
-  padding-top 30px
+  padding-top 22px
   color #10a9fd
+  .pre_wechat {
+    width 100%
+    height 40px
+    position relative
+    margin-top 10px
+    margin-bottom 20px
+    .per_bindImg {
+      position absolute
+      top 14px
+      right 45px
+    }
+    .pre_bind {
+      position absolute
+      top 12px
+      right 14px
+      font-size 12px
+      color #3fcf77
+    }
+  }
 }
 .pre_headBox {
   height 124px
   width 130px
   position absolute
-  top 30px
+  top 22px
   left -160px
 }
 .pre_tips {
@@ -69,8 +140,12 @@ export default {
 .pre_item {
   width 300px
   height 54px
-  margin-top 16px
+  margin-top 12px
   position relative
+  .hiddenPwd {
+    top 34px
+    right 18px
+  }
 }
 .pre_inp {
   display block
@@ -92,7 +167,8 @@ export default {
   margin-bottom 4px
 }
 .pre_tipDown {
-  margin-top 36px !important
+  margin-top 30px !important
+  margin-bottom 20px
 }
 .pre_tipDown .pre_itemTip {
   margin-bottom 0 !important
@@ -110,6 +186,7 @@ export default {
   position absolute
   top 0
   right -110px
+  cursor pointer
 }
 .pre_send {
   color #10a9fd
