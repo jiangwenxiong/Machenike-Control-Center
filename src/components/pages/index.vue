@@ -115,7 +115,7 @@ export default {
 }
 .index_noticeItem {
   width: 380px;
-  background: url("../../assets/img/index/bg.png") no-repeat 100% 100%;
+  background: url("/static/bg.png") no-repeat 100% 100%;
 }
 .index_noticeRight {
   margin-left: 50px;

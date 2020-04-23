@@ -7,7 +7,7 @@ import Personal from '@/components/pages/personal'
 Vue.use(Router)
 
 export default new Router({
-  mode:'history',
+  // mode:'history',
   routes: [
     {
       path: '/',

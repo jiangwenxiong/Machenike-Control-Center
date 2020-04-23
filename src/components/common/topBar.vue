@@ -1,6 +1,6 @@
 <template>
    <div class="topBar">
-            <img class="topmid" src="../../assets/img/topbar/topmid.png" />
+            <img class="topmid" src="/static/topmidimg.png" />
             <ul class="topmid topItemBox">
                 <li class="topItem topItemActive">个人信息</li>
                 <li class="topItem">个人信息</li>
