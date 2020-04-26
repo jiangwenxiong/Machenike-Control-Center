@@ -2,7 +2,7 @@
   <div class="contant">
     <div class="personalContant">
       <div class="pre_headBox">
-        <img class="per_headImg" src="../../assets/img/personal/headborder.png" />
+        <img class="per_headImg" src="~@/assets/img/personal/headborder.png" />
       </div>
       <div class="pre_tips">个人信息</div>
       <div class="pre_item">
@@ -21,25 +21,25 @@
       </div>
       <div class="pre_tips">账号绑定</div>
       <div class="pre_wechat">
-        <img class="per_wechatImg" src="../../assets/img/personal/wechat.png" />
-        <img class="per_bindImg" src="../../assets/img/personal/wechatyes.png" />
+        <img class="per_wechatImg" src="~@/assets/img/personal/wechat.png" />
+        <img class="per_bindImg" src="~@/assets/img/personal/wechatyes.png" />
         <div class="pre_bind">绑定</div>
       </div>
       <div class="pre_tips">修改密码</div>
       <div class="pre_item">
         <div class="pre_itemTip">当前密码</div>
         <input class="pre_inp" :type="oldPasswordType" name="oldPassword" />
-        <img class="hiddenPwd" @click="changePwd(1)" src="../../assets/img/login/hiddenPwd.png" />
+        <img class="hiddenPwd" @click="changePwd(1)" src="~@/assets/img/login/hiddenPwd.png" />
       </div>
       <div class="pre_item">
         <div class="pre_itemTip">新密码</div>
         <input class="pre_inp" :type="newPasswordType" name="newPassword" />
-        <img class="hiddenPwd" @click="changePwd(2)" src="../../assets/img/login/hiddenPwd.png" />
+        <img class="hiddenPwd" @click="changePwd(2)" src="~@/assets/img/login/hiddenPwd.png" />
       </div>
       <div class="pre_item">
         <div class="pre_itemTip">再次输入</div>
         <input class="pre_inp" :type="newPasswordType2" name="newPassword" />
-        <img class="hiddenPwd" @click="changePwd(3)" src="../../assets/img/login/hiddenPwd.png" />
+        <img class="hiddenPwd" @click="changePwd(3)" src="~@/assets/img/login/hiddenPwd.png" />
       </div>
     </div>
   </div>

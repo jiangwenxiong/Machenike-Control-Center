@@ -51,7 +51,7 @@ export default {
 .index_welcome {
   width: 404px;
   height: 50px;
-  background: url("../../assets/img/index/welcomebg.png") no-repeat 100% 100%;
+  background: url("~@/assets/img/index/welcomebg.png") no-repeat 100% 100%;
   font-size: 16px;
   line-height: 50px;
   padding-left: 20px;

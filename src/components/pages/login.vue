@@ -1,12 +1,12 @@
 <template>
   <div class="contant">
     <div class="loginContant">
-      <img class="logo" src="../../assets/img/login/logo.png" />
+      <img class="logo" src="~@/assets/img/login/logo.png" />
       <div class="loginTip">登录您的MACHENIKE账号</div>
-      <img class="loginByWechat" @click="shoWechatLogin = true;" src="../../assets/img/login/wechat.png" />
+      <img class="loginByWechat" @click="shoWechatLogin = true;" src="~@/assets/img/login/wechat.png" />
       <div class="loginItem">
-        <img class="orline orline1" src="../../assets/img/login/orline.png" />
-        <img class="orline orline2" src="../../assets/img/login/orline.png" />
+        <img class="orline orline1" src="~@/assets/img/login/orline.png" />
+        <img class="orline orline2" src="~@/assets/img/login/orline.png" />
         or
       </div>
       <div class="loginItem loginItem2">
@@ -16,7 +16,7 @@
       <div class="loginItem loginItem2">
         <div class="tip">密码</div>
         <input class="loginInp password" :type="intType" name="password" />
-        <img class="hiddenPwd" @click="changePwd" src="../../assets/img/login/hiddenPwd.png" />
+        <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">验证码</div>
@@ -33,10 +33,10 @@
      <div class="loginMask" v-show="shoWechatLogin">
             <div class="loginINwechat">
                 <div class="titBar">
-                    <img  @click="shoWechatLogin = false;" class="close2" src="../../assets/img/login/close.png" />
+                    <img  @click="shoWechatLogin = false;" class="close2" src="~@/assets/img/login/close.png" />
                 </div>
                 <div class="maskTips">Log In To WeChat</div>
-                <img class="ercode" src="../../assets/img/login/ercode.png" />
+                <img class="ercode" src="~@/assets/img/login/ercode.png" />
                 <div class="maskTips2">Scan QR Code in WeChat to log in<br>"Machenike"</div>
 
             </div>

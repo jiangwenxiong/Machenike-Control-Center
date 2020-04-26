@@ -4,40 +4,20 @@
             <ul class="topmid topItemBox" v-show="topItems.length">
                 <li class="topItem" v-for="item,index in topItems"  @click="itemClick(index,item)"  :class="index==activeIndex?'topItemActive':''">{{item.name}}</li>
             </ul>
-            <img class="topleft" src="../../assets/img/topbar/topleft.png" />
-            <img class="topright" src="../../assets/img/topbar/topright.png" />
+            <img class="topleft" src="~@/assets/img/topbar/topleft.png" />
+            <img class="topright" src="~@/assets/img/topbar/topright.png" />
             <div class="sysName">
                 机械师控制中心&nbsp;V0.1
             </div>
             <ul class="topRbox">
                 <li class="topRbtn settingsBtn" @mousemove="showsettingBox=true;" @mouseout="showsettingBox=false;">
-                    <img class="settings" src="../../assets/img/topbar/settings.png" />
+                    <img class="settings" src="~@/assets/img/topbar/settings.png" />
                     <div class="settingsBox" v-show="showsettingBox">
                         <div class="settingCon">
-                            <div class="settingsItem">
-                                <img class="siIcon siIconB" src="../../assets/img/topbar/ssettingb.png" />
-                                <img class="siIcon siIconW" src="../../assets/img/topbar/ssettingw.png" />
-                                设置
-                            </div>
-                            <div class="settingsItem">
-                                <img class="siIcon siIconB" src="../../assets/img/topbar/slogb.png" />
-                                <img class="siIcon siIconW" src="../../assets/img/topbar/slogw.png" />
-                                更新日志
-                            </div>
-                            <div class="settingsItem">
-                                <img class="siIcon siIconB" src="../../assets/img/topbar/saboutb.png" />
-                                <img class="siIcon siIconW" src="../../assets/img/topbar/saboutw.png" />
-                                关于我们
-                            </div>
-                            <div class="settingsItem">
-                                <img class="siIcon siIconB" src="../../assets/img/topbar/slogoutb.png" />
-                                <img class="siIcon siIconW" src="../../assets/img/topbar/slogoutw.png" />
-                                注销
-                            </div>
-                            <div class="settingsItem noBorder">
-                                <img class="siIcon siIconB" src="../../assets/img/topbar/squitb.png" />
-                                <img class="siIcon siIconW" src="../../assets/img/topbar/squitw.png" />
-                                退出
+                            <div class="settingsItem" v-for="item in featureList" @click="setItemClick(item)">
+                                <img class="siIcon siIconB" :src="item.icon" />
+                                <img class="siIcon siIconW" :src="item.activeIcon" />
+                                {{item.name}}
                             </div>
                         </div>
         
@@ -45,10 +25,10 @@
 
                 </li>
                 <li class="topRbtn">
-                    \<img class="minimize" src="../../assets/img/topbar/minimize.png" />
+                    \<img class="minimize" src="~@/assets/img/topbar/minimize.png" />
                 </li>
                 <li class="topRbtn">
-                    \<img class="close" src="../../assets/img/topbar/close.png" />
+                    \<img class="close" src="~@/assets/img/topbar/close.png" />
                 </li>
             </ul>
            
@@ -58,6 +38,16 @@
 
 <script>
 import Topmid from "@/assets/img/topbar/topmid.png";
+import SetIcon1b from "@/assets/img/topbar/ssettingb.png";
+import SetIcon1w from "@/assets/img/topbar/ssettingw.png";
+import SetIcon2b from "@/assets/img/topbar/slogb.png";
+import SetIcon2w from "@/assets/img/topbar/slogw.png";
+import SetIcon3b from "@/assets/img/topbar/saboutb.png";
+import SetIcon3w from "@/assets/img/topbar/saboutw.png";
+import SetIcon4b from "@/assets/img/topbar/slogoutb.png";
+import SetIcon4w from "@/assets/img/topbar/slogoutw.png";
+import SetIcon5b from "@/assets/img/topbar/squitb.png";
+import SetIcon5w from "@/assets/img/topbar/squitw.png";
 import { mapGetters } from 'vuex';
 export default {
   name: 'TopBar',
@@ -65,7 +55,40 @@ export default {
     return {
       msg: 'TopBar Mounted',
       showsettingBox:false,
-      activeIndex:0
+      activeIndex:0,
+      featureList:[
+          {
+          name: "设置",
+          icon: SetIcon1b,
+          activeIcon: SetIcon1w,
+          routeName: "SideHardware"
+        },
+         {
+          name: "更新日志",
+          icon: SetIcon2b,
+          activeIcon: SetIcon2w,
+          routeName: "SideHardware"
+        },
+         {
+          name: "关于我们",
+          icon: SetIcon3b,
+          activeIcon: SetIcon3w,
+          routeName: "SideHardware"
+        },
+         {
+          name: "注销",
+          icon: SetIcon4b,
+          activeIcon: SetIcon4w,
+          routeName: "Login"
+        },
+         {
+          name: "退出",
+          icon: SetIcon5b,
+          activeIcon: SetIcon5w,
+          routeName: "SideHardware"
+        },
+        
+      ]
     }
   },
    computed: {
@@ -83,6 +106,10 @@ export default {
           if(item.routerName){
               this.$router.push({ name: item.routerName});
           }
+      },
+      setItemClick(item){
+           this.$router.push({ name: item.routeName});
+           sessionStorage.removeItem('activeIndex');
       }
   }
 }
@@ -123,7 +150,7 @@ export default {
     padding-left: 38px;
     letter-spacing: 2px;
     color: #10abff;
-    background: url('../../assets/img/base/topItem.png') no-repeat 100% 100%;
+    background: url('~@/assets/img/base/topItem.png') no-repeat 100% 100%;
 }
 .topItemActive{
     margin: 0;
@@ -131,7 +158,7 @@ export default {
     width: 150px;
     line-height: 46px;
     padding-left: 42px;
-    background: url('../../assets/img/base/topItema.png') no-repeat 100% 100%;
+    background: url('~@/assets/img/base/topItema.png') no-repeat 100% 100%;
 }
 .topBar .topmid{
     left: 186px;
@@ -189,7 +216,7 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
-    background: url('../../assets/img/login/setbg.png') no-repeat 100% 100%;
+    background: url('~@/assets/img/login/setbg.png') no-repeat 100% 100%;
     padding-top:9px
 }
 
