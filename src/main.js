@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   document.title = to.meta.title || '机械师控制中心';
-  console.log(store.state.topBarItems);
+  console.log(to.name);
   store.commit("setTopList", []);
   switch (to.name) {
     case 'Index':
@@ -33,6 +33,18 @@ router.beforeEach((to, from, next) => {
         },
       ]);
       break;
+      case 'SideHardware':
+        store.commit("setTopList", [{
+            name: '硬件监控'
+          },
+          {
+            name: '桌面监控',
+          },
+          {
+            name: '系统管理',
+          },
+        ]);
+        break;
 
     default:
       break;

@@ -144,7 +144,7 @@ export default {
     display: inline-block;
     height:40px;
     width: 135px;
-    line-height: 40px;
+    line-height: 44px;
     position: relative;
     font-size: 12px;
     padding-left: 38px;

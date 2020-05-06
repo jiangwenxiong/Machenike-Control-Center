@@ -23,12 +23,38 @@
                <div class="hw_details">详情</div>
              </div>
              <ul class="hw_infoItems">
-               <li class="hw_infoItem">
-                 <div class="hw_itemName"></div>
+               <li class="hw_infoItem" v-for="item in itemList">
+                 <div class="hw_itemName">
+                   <img class="hw_ItemIcon" :src="item.icon" />
+                   <span>{{item.name}}</span>
+                 </div>
+                 <div class="hw_itemDesc" >
+                   <div class="hw_descItem" v-for="i,index in item.desc" :class="'hw_descItem'+index"  v-html="i"></div>
+                   <div class="hw_desctit">{{item.desctit}}</div>
+                   <div class="hw_descNc" v-for="i,index in item.items" :class="'hw_descNc'+index"  v-html="i"></div>
+                 </div>
                </li>
              </ul>
            </div>
-           <div class="hw_infoRight"></div>
+           <div class="hw_infoRight">
+             <div class="hw_tempBox">
+               <div class="hw_line1"></div>
+               <div class="hw_line2"></div>
+               <div class="hw_tempTips">温度监控</div>
+             </div>
+             <ul class="hw_tempItems">
+               <li class="hw_tempItem" v-for="item,index in tempList">
+                 <div class="hw_startPoint"></div>
+                 <div class="hw_tipsName">{{item.name}}</div>
+                  <div class="hw_value">{{item.value}}°</div>
+                  <img class="hw_tempLine" src="~@/assets/img/side1/templine.png" />
+                 <div class="hw_tempBorder">
+                    <div class="hw_tempBar" :id="'hw_tempBar'+index" :style="{'width':item.value+'%'}"></div>
+                 </div>
+                
+               </li>
+             </ul>
+           </div>
          </div>
       </div>
     </div>
@@ -43,6 +69,7 @@ import ItemIcon4 from "@/assets/img/side1/item4.png";
 import ItemIcon5 from "@/assets/img/side1/item5.png";
 import ItemIcon6 from "@/assets/img/side1/item6.png";
 import ItemIcon7 from "@/assets/img/side1/item7.png";
+import TempLine from "@/assets/img/side1/templine.png";
 export default {
   name: "",
   data() {
@@ -53,37 +80,58 @@ export default {
         {
           name:'系统',
           icon:ItemIcon1,
-          desc:'Windows&nbsp;10&nbsp;64位<br>版本号18362'
+          desc:['Windows&nbsp;10&nbsp;64位<br>版本号18362']
         },
         {
           name:'处理器',
           icon:ItemIcon2,
-          desc1:'intel Core i7-9750H',
-          desc2:'核心数6 线程数12 频率3.99GHz 电压 1.16V'
+          desc:['intel&nbsp;Core&nbsp;i7-9750H<br>核心数6&nbsp;线程数12&nbsp;频率3.99GHz&nbsp;电压&nbsp;1.16V'],
         },
         {
-          name:'系统',
-          icon:ItemIcon1,
-          desc1:'Windows 10 64位',
-          desc2:'版本号18362'
+          name:'显卡',
+          icon:ItemIcon3,
+          desc:[
+            'intel（R）UHD&nbsp;Graphics&nbsp;630<br>Machenike流处理器24',
+            ' NVIDIA&nbsp;GeForce&nbsp;RTX&nbsp;2060<br>品牌处理器1920显存6G'
+          ]
         },
         {
-          name:'系统',
-          icon:ItemIcon1,
-          desc1:'Windows 10 64位',
-          desc2:'版本号18362'
+          name:'主硬盘',
+          icon:ItemIcon4,
+          desc:['INTEL&nbsp;SSDPEKNW010TB<br>实际容量952GB']
         },
         {
-          name:'系统',
-          icon:ItemIcon1,
-          desc1:'Windows 10 64位',
-          desc2:'版本号18362'
+          name:'主板',
+          icon:ItemIcon5,
+          desc:['Machenike<br>品牌Machenike&nbsp;&nbsp;芯片组Intel&nbsp;HM370'],
         },
         {
-          name:'系统',
-          icon:ItemIcon1,
-          desc1:'Windows 10 64位',
-          desc2:'版本号18362'
+          name:'显示器',
+          icon:ItemIcon6,
+          desc:['默认显示器<br>分辨率1920x1080&nbsp;&nbsp;刷新率60Hz'],
+        },
+        {
+          name:'内存',
+          icon:ItemIcon7,
+          desctit:'总大小16GB 类型DDR4 频率2666MHz',
+          items:[
+            'Samsung&nbsp;DDR4-2666&nbsp;8GB',
+            'Samsung&nbsp;DDR4-2666&nbsp;8GB'
+            ]
+        }
+      ],
+      tempList:[
+        {
+          name:'处理器温度',
+          value:45
+        },
+         {
+          name:'显卡温度',
+          value:55
+        },
+         {
+          name:'主硬盘温度',
+          value:30
         },
       ]
     };
@@ -167,6 +215,88 @@ export default {
   }
   
 }
+.hw_infoRight{
+  flex 1;
+  padding-left 15px;
+  .hw_tempBox{
+  width 100%;
+  height 20px;
+  display flex;
+  .hw_line1{
+    height 100%;
+    width 1px;
+    background #10abff;
+    margin-right 1px;
+  }
+  .hw_line2{
+    height 100%;
+    width 5px;
+    background #10abff;
+    margin-right 2px;
+  }
+  .hw_tempTips{
+    height 100%;
+    width 60px;
+    border 1px solid #10abff;
+    font-size 12px;
+    text-align center;
+    line-height 20px;
+  }
+}
+.hw_tempItems{
+  margin-top 20px;
+  .hw_tempItem{
+    position relative;
+    width 100%;
+    height 40px;
+    margin-bottom 20px;
+    padding-top 10px;
+    .hw_tipsName{
+      font-size 12px;
+      position absolute;
+      top -4px;
+      left 40px;
+    }
+    .hw_value{
+      font-size 12px;
+      position absolute;
+      top -4px;
+      right 0;
+    }
+    .hw_tempLine{
+      display block;
+      position absolute;
+      top 2px;
+      left 20px;
+    }
+    .hw_startPoint{
+      height 28px;
+      width 28px;
+      background #10abff;
+      border-radius 100%
+    }
+    .hw_tempBorder{
+      height 10px;
+      width 294px;
+      border-radius 5px;
+      position absolute;
+      top 20px;
+      left 22px;
+      border 1px  solid #10abff
+    }
+    .hw_tempBar{
+      height 10px;
+      width 30%;
+      border-radius 5px;
+      background linear-gradient(to right, #10abff 0%, #aa53cf 100%)
+    }
+    #hw_tempBar2{
+       background linear-gradient(to right, #10abff 0%, #53cf7f 100%)
+    }
+  }
+}
+}
+
 .hardwareInfo{
      height 100%;
      width 100%
@@ -239,8 +369,43 @@ export default {
          position relative;
          height 100%;
          width 124px;
-         background red;
+         line-height:48px;
+         font-size 12px;
+         img{
+           display: inline-block; 
+           vertical-align: middle;
+           margin-left 24px;
+           margin-right 12px;
+         }
+         span{
+            display: inline-block; 
+            position absolute;
+            top 0;
+            left 74px;
+         }
+      }
+      .hw_itemDesc{
+        flex 1;
+        padding-left 24px;
+        padding-top 8px;
+        .hw_descItem{
+          font-size 12px;
+          display inline-block;
+        }
+        .hw_descItem1{
+          margin-left 20px;
+        }
+        .hw_descNc,.hw_desctit{
+           font-size 12px;
+          display inline-block;
+        }
+        .hw_descNc1{
+          margin-left 20px;
+        }
       }
     }
   }
+  
+
+
 </style>
