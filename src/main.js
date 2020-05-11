@@ -6,6 +6,8 @@ import router from './router'
 import store from './store'
 
 import Es6Promise from 'es6-promise'
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 Es6Promise.polyfill()
 
