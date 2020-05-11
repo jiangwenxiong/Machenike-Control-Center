@@ -37,16 +37,34 @@ router.beforeEach((to, from, next) => {
       break;
       case 'SideHardware':
         store.commit("setTopList", [{
-            name: '硬件监控'
+            name: '硬件监控',
+            routerName:'SideHardware'
           },
           {
             name: '桌面监控',
+            routerName:'SideDisktop'
           },
           {
             name: '系统管理',
+            routerName:'Login'
           },
         ]);
         break;
+        case 'SideDisktop':
+          store.commit("setTopList", [{
+              name: '硬件监控',
+              routerName:'SideHardware'
+            },
+            {
+              name: '桌面监控',
+              routerName:'SideDisktop'
+            },
+            {
+              name: '系统管理',
+              routerName:'Login'
+            },
+          ]);
+          break;
 
     default:
       break;

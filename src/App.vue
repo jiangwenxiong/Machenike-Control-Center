@@ -14,6 +14,7 @@
 import TopBar from "@/components/common/topBar";
 import SideBar from "@/components/common/sideBar";
 import "./assets/css/base.css";
+import "./assets/css/common.styl";
 export default {
   name: "App",
   components: {

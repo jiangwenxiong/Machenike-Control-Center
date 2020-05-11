@@ -211,6 +211,7 @@ export default {
     position: absolute;
     left: -20px;
     top:36px;
+    z-index 1000;
 }
 .settingCon{
     width: 100%;

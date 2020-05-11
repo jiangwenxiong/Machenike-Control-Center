@@ -1,7 +1,7 @@
 <template>
   <div class="contant">
     <div class="hardwareContant">
-      <div class="hardwareLoader" v-show="false">
+      <div class="hardwareLoader" v-show="showLoader">
         <img class="hw_loadIcon" src="/static/img/loadicon.png" />
         <div class="hw_tips hw_tips1">Machenike正在读取硬件信息</div>
         <div class="hw_tips hw_tips2">硬件信息载入中：</div>
@@ -13,8 +13,8 @@
         </div>
         <div class="hw_tips hw_tips3">信息源来自CPU-Z/GPU-Z/Machenike官方数据库</div>
       </div>
-      <div class="hardwareInfo">
-        <img class="hw_machenike" src="~@/assets/img/side1/machenikeimg.png" />
+      <div class="hardwareInfo" v-show="!showLoader">
+        <img class="com_machenike" src="~@/assets/img/side1/machenikeimg.png" />
         <div class="hw_infoBox">
           <div class="hw_infoLeft">
             <div class="hw_infoTips">
@@ -52,8 +52,17 @@
               <div class="hw_line1"></div>
               <div class="hw_line2"></div>
               <div class="hw_tempTips">温度监控</div>
-              <div class="hw_copy"></div>
-              <div class="hw_screenshot"></div>
+              <div class="hw_copyBox">
+                 <img class="" src="~@/assets/img/side1/copy2.png" />
+                 <img class="copy1" src="~@/assets/img/side1/copy1.png" />
+                 复制
+              </div>
+              <div class="hw_screenshot">
+                <img class="" src="~@/assets/img/side1/screen2.png" />
+                <img class="screen1" src="~@/assets/img/side1/screen1.png" />
+                截图
+              </div>
+              
             </div>
             <ul class="hw_tempItems">
               <li class="hw_tempItem" v-for="item,index in tempList">
@@ -113,6 +122,10 @@ import ItemIcon4 from "@/assets/img/side1/item4.png";
 import ItemIcon5 from "@/assets/img/side1/item5.png";
 import ItemIcon6 from "@/assets/img/side1/item6.png";
 import ItemIcon7 from "@/assets/img/side1/item7.png";
+import CopyIcon1 from "@/assets/img/side1/copy1.png";
+import CopyIcon2 from "@/assets/img/side1/copy2.png";
+import ScreenIcon1 from "@/assets/img/side1/screen1.png";
+import ScreenIcon2 from "@/assets/img/side1/screen2.png";
 import TempLine from "@/assets/img/side1/templine.png";
 export default {
   name: "",
@@ -198,7 +211,8 @@ export default {
       showTemp: {
         name: "",
         value: ""
-      }
+      },
+      showLoader:true
     };
   },
   mounted() {
@@ -207,6 +221,7 @@ export default {
       if (that.progress < 100) {
         that.progress += 1;
       } else {
+        that.showLoader = false;
         clearInterval(t);
       }
     }, 100);
@@ -369,6 +384,7 @@ export default {
 .hw_infoRight {
   flex 1
   padding-left 15px
+  position relative;
   .hw_tempBox {
     width 100%
     height 20px
@@ -392,6 +408,42 @@ export default {
       font-size 12px
       text-align center
       line-height 20px
+    }
+    .hw_copyBox{
+      position absolute;
+      top -10px;
+      right 50px;
+      font-size 12px;
+      cursor pointer
+      img{
+        position absolute;
+        top 3px;
+        right 26px;
+      }
+      &:hover{
+        color:#fff;
+        .copy1{
+          display none;
+        }
+      }
+    }
+    .hw_screenshot{
+      position absolute;
+      top -10px;
+      right 0;
+      font-size 12px;
+      cursor pointer
+      img{
+        position absolute;
+        top 3px;
+        right 26px;
+      }
+      &:hover{
+        color:#fff;
+        .screen1{
+          display none;
+        }
+      }
     }
   }
   .hw_tempItems {
@@ -520,9 +572,6 @@ export default {
   width 100%
   padding-left 28px
   padding-top 30px
-}
-.hw_machenike {
-  margin-bottom 20px
 }
 .hw_infoBox {
   width 835px

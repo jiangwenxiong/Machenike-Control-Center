@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/pages/login'
-import Index from '@/components/pages/index'
-import Personal from '@/components/pages/personal'
-import SideHardware from '@/components/pages/sideBar/side1Hardware'
+import Login from '@/components/pages/login'                                              //登录页
+import Index from '@/components/pages/index'                                              //登录首页
+import Personal from '@/components/pages/personal'                                        //个人信息页  
+
+//侧边栏1 硬件监控
+import SideHardware from '@/components/pages/sideBar/side1/Hardware'                      //硬件监控
+import SideDisktop from '@/components/pages/sideBar/side1/Disktop'                        //桌面监控
+
 import SideGame from '@/components/pages/sideBar/side2Game'
 import SideLight from '@/components/pages/sideBar/side3Light'
 import SideDriver from '@/components/pages/sideBar/side4Driver'
@@ -46,8 +50,15 @@ export default new Router({
       meta: {
         title: '机械师控制中心-硬件监控'
       }
-    }
-    ,
+    },
+    {
+      path: '/disktop',
+      name: 'SideDisktop',
+      component: SideDisktop,
+      meta: {
+        title: '机械师控制中心-桌面监控'
+      }
+    },
     {
       path: '/gameacceleration',
       name: 'SideGame',
