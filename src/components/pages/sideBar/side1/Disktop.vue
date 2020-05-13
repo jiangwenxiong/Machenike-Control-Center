@@ -3,9 +3,9 @@
       <img class="com_machenike" src="~@/assets/img/side1/machenikeimg.png" />
       <div class="dk_tit">
         桌面监控
-        <div class="dk_btnBox" @click="btnClick">
+        <div class="dk_btnBox" @click="btnClick" :style="{'background':btnLeft>0?'#10a9fd':''}">
           <div class="dk_con">
-             <div class="dk_btn" :style="{'left':btnLeft}"></div>
+             <div class="dk_btn" :style="{'left':btnLeft+'px','background':btnLeft>0?'#fff':''}"></div>
           </div>
          
         </div>
@@ -13,6 +13,7 @@
       <div class="dk_text">开启功能后监控硬件数据显示在桌面上，让您更方便查看硬件状态</div>
       <div class="dk_titItem">桌面实时监控硬件，更了解您的电脑状态</div>
       <img class="dk_screen" src="/static/img/disk.png" />
+      <div class="dk_setting"></div>
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
   data () {
     return {
       msg: '',
-      btnLeft:'-1px'
+      btnLeft:-1
     }
   },
   mounted (){
@@ -30,10 +31,10 @@ export default {
   },
   methods:{
     btnClick(){
-      if(this.btnLeft=='-1px'){
-        this.btnLeft = '17px'
+      if(this.btnLeft=='-1'){
+        this.btnLeft = '17'
       }else{
-        this.btnLeft = '-1px'
+        this.btnLeft = '-1'
       }
     }
   },
@@ -48,6 +49,15 @@ export default {
   overflow hidden
   padding-left: 28px;
   padding-top: 30px;
+  position relative;
+  .dk_setting{
+    width 100%;
+    height 520px;
+    background #050b24
+    position absolute;
+    top 130px;
+    left 0;
+  }
   .dk_tit{
     height 36px;
     font-size 20px;

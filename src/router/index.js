@@ -1,12 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/pages/login'                                              //登录页
-import Index from '@/components/pages/index'                                              //登录首页
-import Personal from '@/components/pages/personal'                                        //个人信息页  
+import Login from '@/components/pages/login' //登录页
+import Index from '@/components/pages/index' //登录首页
+import Personal from '@/components/pages/personal' //个人信息页  
 
 //侧边栏1 硬件监控
-import SideHardware from '@/components/pages/sideBar/side1/Hardware'                      //硬件监控
-import SideDisktop from '@/components/pages/sideBar/side1/Disktop'                        //桌面监控
+import Side1Hardware from '@/components/pages/sideBar/side1/Hardware' //硬件监控
+import Side1Disktop from '@/components/pages/sideBar/side1/Disktop' //桌面监控
+import Side1Management from '@/components/pages/sideBar/side1/Management' //系统管理
+
+//侧边栏2 游戏加速
+import Side2Optimization from '@/components/pages/sideBar/side2/Optimization' //性能优化
+import Side2Setting from '@/components/pages/sideBar/side2/Setting' //优化设置
+import Side2Optetting from '@/components/pages/sideBar/side2/OptimizeSetting' //优化设置
+
 
 import SideGame from '@/components/pages/sideBar/side2Game'
 import SideLight from '@/components/pages/sideBar/side3Light'
@@ -18,8 +25,7 @@ Vue.use(Router)
 
 export default new Router({
   // mode:'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Login',
       component: Login,
@@ -45,18 +51,50 @@ export default new Router({
     },
     {
       path: '/hardware',
-      name: 'SideHardware',
-      component: SideHardware,
+      name: 'Side1Hardware',
+      component: Side1Hardware,
       meta: {
         title: '机械师控制中心-硬件监控'
       }
     },
     {
       path: '/disktop',
-      name: 'SideDisktop',
-      component: SideDisktop,
+      name: 'Side1Disktop',
+      component: Side1Disktop,
       meta: {
         title: '机械师控制中心-桌面监控'
+      }
+    },
+    {
+      path: '/management',
+      name: 'Side1Management',
+      component: Side1Management,
+      meta: {
+        title: '机械师控制中心-桌面监控'
+      }
+    },
+    {
+      path: '/optimization',
+      name: 'Side2Optimization',
+      component: Side2Optimization,
+      meta: {
+        title: '机械师控制中心-性能优化'
+      }
+    },
+    {
+      path: '/gamesetting',
+      name: 'Side2Setting',
+      component: Side2Setting,
+      meta: {
+        title: '机械师控制中心-优化设置'
+      }
+    },
+    {
+      path: '/optimizeSetting',
+      name: 'Side2Optetting',
+      component: Side2Optetting,
+      meta: {
+        title: '机械师控制中心-设置'
       }
     },
     {
@@ -66,8 +104,7 @@ export default new Router({
       meta: {
         title: '机械师控制中心-游戏加速'
       }
-    }
-    ,
+    },
     {
       path: '/lightcontrol',
       name: 'SideLight',
@@ -75,8 +112,7 @@ export default new Router({
       meta: {
         title: '机械师控制中心-灯光控制'
       }
-    }
-    ,
+    },
     {
       path: '/officialdriver',
       name: 'SideDriver',
@@ -84,8 +120,7 @@ export default new Router({
       meta: {
         title: '机械师控制中心-官方驱动'
       }
-    }
-    ,
+    },
     {
       path: '/hardcoresoftware',
       name: 'SideHardcore',
@@ -93,8 +128,7 @@ export default new Router({
       meta: {
         title: '机械师控制中心-硬核软件'
       }
-    }
-    ,
+    },
     {
       path: '/machenikergathe',
       name: 'SideGather',
@@ -105,4 +139,3 @@ export default new Router({
     }
   ]
 })
-

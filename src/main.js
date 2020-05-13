@@ -19,7 +19,14 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title || '机械师控制中心';
   console.log(to.name);
   store.commit("setTopList", []);
-  switch (to.name) {
+  var toName = to.name;
+  if (toName.indexOf("Side1") != -1) {
+    toName = 'Side1';
+  } else if (toName.indexOf("Side2") != -1) {
+    toName = 'Side2';
+  }
+
+  switch (toName) {
     case 'Index':
       store.commit("setTopList", [{
         name: '个人信息'
@@ -31,40 +38,37 @@ router.beforeEach((to, from, next) => {
         },
         {
           name: '个人设置',
-          routerName:'Login'
+          routerName: 'Login'
         },
       ]);
       break;
-      case 'SideHardware':
-        store.commit("setTopList", [{
-            name: '硬件监控',
-            routerName:'SideHardware'
-          },
-          {
-            name: '桌面监控',
-            routerName:'SideDisktop'
-          },
-          {
-            name: '系统管理',
-            routerName:'Login'
-          },
-        ]);
-        break;
-        case 'SideDisktop':
-          store.commit("setTopList", [{
-              name: '硬件监控',
-              routerName:'SideHardware'
-            },
-            {
-              name: '桌面监控',
-              routerName:'SideDisktop'
-            },
-            {
-              name: '系统管理',
-              routerName:'Login'
-            },
-          ]);
-          break;
+    case 'Side1':
+      store.commit("setTopList", [{
+          name: '硬件监控',
+          routerName: 'Side1Hardware'
+        },
+        {
+          name: '桌面监控',
+          routerName: 'Side1Disktop'
+        },
+        {
+          name: '系统管理',
+          routerName: 'Side1Management'
+        },
+      ]);
+      break;
+    case 'Side2':
+      store.commit("setTopList", [{
+          name: '性能优化',
+          routerName: 'Side2Optimization'
+        },
+        {
+          name: '设置',
+          routerName: 'Side2Optetting',
+          padding: '50px'
+        }
+      ]);
+      break;
 
     default:
       break;

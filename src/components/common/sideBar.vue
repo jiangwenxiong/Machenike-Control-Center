@@ -2,7 +2,7 @@
   <div class="sideBar">
     <img class="sideBg" src="/static/img/sideBg.png" />
     <ul class="sideBox">
-      <li class="loginCon" @click="">
+      <li class="loginCon" @click>
         <img class="loginIcon" src="~@/assets/img/sidebar/loginicon.png" />
         <div class="loginTit">
           <span class="loginCN">登&nbsp;&nbsp;录</span>
@@ -50,13 +50,13 @@ export default {
           name: "硬件监控",
           icon: sideIcon1,
           activeIcon: sideIcon1a,
-          routeName: "SideHardware"
+          routeName: "Side1Hardware"
         },
         {
           name: "游戏加速",
           icon: sideIcon2,
           activeIcon: sideIcon2a,
-          routeName: "SideGame"
+          routeName: "Side2Optimization"
         },
         {
           name: "灯光控制",
@@ -101,8 +101,7 @@ export default {
         sessionStorage.setItem("activeIndex", index);
         if (item.routeName) this.$router.push({ name: item.routeName });
       }
-    },
-    
+    }
   }
 };
 </script>
