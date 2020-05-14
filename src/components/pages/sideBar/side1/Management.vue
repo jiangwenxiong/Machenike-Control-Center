@@ -48,32 +48,31 @@
               <img class="mg_fan" src="~@/assets/img/side1/down.png" />
             </div>
           </div>
-          
         </div>
         <div class="mg_speedMode">
-              <div class="mg_pieBox" @click="speedMode=1;speedName='高速'">
-                  <div class="mg_pie" v-show="speedMode==1"></div>
-              </div>
-               <img class="mg_modeIcon" src="~@/assets/img/side1/1.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/2.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/3.png" />
+          <div class="mg_pieBox" @click="speedMode=1;speedName='高速'">
+            <div class="mg_pie" v-show="speedMode==1"></div>
           </div>
-           <div class="mg_speedMode">
-              <div class="mg_pieBox" @click="speedMode=2;speedName='中速'">
-                  <div class="mg_pie" v-show="speedMode==2"></div>
-              </div>
-               <img class="mg_modeIcon" src="~@/assets/img/side1/4.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/5.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/6.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/1.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/2.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/3.png" />
+        </div>
+        <div class="mg_speedMode">
+          <div class="mg_pieBox" @click="speedMode=2;speedName='中速'">
+            <div class="mg_pie" v-show="speedMode==2"></div>
           </div>
-           <div class="mg_speedMode">
-              <div class="mg_pieBox" @click="speedMode=3;speedName='低速'">
-                  <div class="mg_pie" v-show="speedMode==3"></div>
-              </div>
-               <img class="mg_modeIcon" src="~@/assets/img/side1/7.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/8.png" />
-               <img class="mg_modeIcon" src="~@/assets/img/side1/9.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/4.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/5.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/6.png" />
+        </div>
+        <div class="mg_speedMode">
+          <div class="mg_pieBox" @click="speedMode=3;speedName='低速'">
+            <div class="mg_pie" v-show="speedMode==3"></div>
           </div>
+          <img class="mg_modeIcon" src="~@/assets/img/side1/7.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/8.png" />
+          <img class="mg_modeIcon" src="~@/assets/img/side1/9.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -233,7 +232,7 @@ export default {
             top 25px
             left -1px
             border 1px solid #10abff
-            z-index 999;
+            z-index 999
             box-shadow inset 0px 0px 5px 1px #10abff
             li {
               width 100%
@@ -263,18 +262,18 @@ export default {
           }
         }
       }
-      .mg_speedMode{
-          height 38px;
-          width 100%;
-          position relative;
-          margin-top 60px;
-          padding-left 10px;
-          img{
-              margin-left 30px;
-          }
-          .mg_pieBox{
-              top 10px;
-          }
+      .mg_speedMode {
+        height 38px
+        width 100%
+        position relative
+        margin-top 60px
+        padding-left 10px
+        img {
+          margin-left 30px
+        }
+        .mg_pieBox {
+          top 10px
+        }
       }
     }
   }

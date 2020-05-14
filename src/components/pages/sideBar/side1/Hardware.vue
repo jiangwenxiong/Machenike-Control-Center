@@ -53,16 +53,15 @@
               <div class="hw_line2"></div>
               <div class="hw_tempTips">温度监控</div>
               <div class="hw_copyBox">
-                 <img class="" src="~@/assets/img/side1/copy2.png" />
-                 <img class="copy1" src="~@/assets/img/side1/copy1.png" />
-                 复制
+                <img class src="~@/assets/img/side1/copy2.png" />
+                <img class="copy1" src="~@/assets/img/side1/copy1.png" />
+                复制
               </div>
               <div class="hw_screenshot">
-                <img class="" src="~@/assets/img/side1/screen2.png" />
+                <img class src="~@/assets/img/side1/screen2.png" />
                 <img class="screen1" src="~@/assets/img/side1/screen1.png" />
                 截图
               </div>
-              
             </div>
             <ul class="hw_tempItems">
               <li class="hw_tempItem" v-for="item,index in tempList">
@@ -212,7 +211,7 @@ export default {
         name: "",
         value: ""
       },
-      showLoader:true
+      showLoader: true
     };
   },
   mounted() {
@@ -255,13 +254,12 @@ export default {
               // width:2
             }
           },
-            axisLabel: {
-                    textStyle: {
-                        color: '#10abff',//坐标值得具体的颜色
- 
-                    }
-                },
-          data: ["","1", "2", "3", "4", "5"]
+          axisLabel: {
+            textStyle: {
+              color: "#10abff" //坐标值得具体的颜色
+            }
+          },
+          data: ["", "1", "2", "3", "4", "5"]
         },
         yAxis: {
           type: "value",
@@ -279,13 +277,12 @@ export default {
               type: "solid"
             }
           },
-          axisTick:{
-            inside:true,
-            length:10,
-            lineStyle:{
-               width:1,
+          axisTick: {
+            inside: true,
+            length: 10,
+            lineStyle: {
+              width: 1
             }
-           
           },
           scale: true
         },
@@ -293,7 +290,7 @@ export default {
           {
             name: "temperature",
             type: "line",
-            symbol:'circle',
+            symbol: "circle",
             areaStyle: {
               normal: {
                 color: new that.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -302,13 +299,13 @@ export default {
                 ])
               }
             }, //填充区域样式
-            lineStyle:{
-               color: '#10abff',
+            lineStyle: {
+              color: "#10abff"
             },
-            itemStyle:{
-              color: '#10abff',
+            itemStyle: {
+              color: "#10abff"
             },
-            data: [ 0,5, 20, 36, 10, 10, 20]
+            data: [0, 5, 20, 36, 10, 10, 20]
           }
         ]
       });
@@ -384,7 +381,7 @@ export default {
 .hw_infoRight {
   flex 1
   padding-left 15px
-  position relative;
+  position relative
   .hw_tempBox {
     width 100%
     height 20px
@@ -409,39 +406,39 @@ export default {
       text-align center
       line-height 20px
     }
-    .hw_copyBox{
-      position absolute;
-      top -10px;
-      right 50px;
-      font-size 12px;
+    .hw_copyBox {
+      position absolute
+      top -10px
+      right 50px
+      font-size 12px
       cursor pointer
-      img{
-        position absolute;
-        top 3px;
-        right 26px;
+      img {
+        position absolute
+        top 3px
+        right 26px
       }
-      &:hover{
-        color:#fff;
-        .copy1{
-          display none;
+      &:hover {
+        color #fff
+        .copy1 {
+          display none
         }
       }
     }
-    .hw_screenshot{
-      position absolute;
-      top -10px;
-      right 0;
-      font-size 12px;
+    .hw_screenshot {
+      position absolute
+      top -10px
+      right 0
+      font-size 12px
       cursor pointer
-      img{
-        position absolute;
-        top 3px;
-        right 26px;
+      img {
+        position absolute
+        top 3px
+        right 26px
       }
-      &:hover{
-        color:#fff;
-        .screen1{
-          display none;
+      &:hover {
+        color #fff
+        .screen1 {
+          display none
         }
       }
     }

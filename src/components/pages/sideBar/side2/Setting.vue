@@ -79,9 +79,9 @@ export default {
     var that = this;
   },
   methods: {
-      check(i){
-          i.checked =!i.checked;
-      }
+    check(i) {
+      i.checked = !i.checked;
+    }
   }
 };
 </script>
@@ -93,7 +93,6 @@ export default {
   color #10a9fd
   overflow hidden
   position relative
-  
   .gs_bg {
     width 100%
   }
@@ -153,12 +152,12 @@ export default {
         height 34px
         line-height 34px
         position relative
-        padding-left 26px;
-        cursor pointer;
+        padding-left 26px
+        cursor pointer
       }
     }
   }
-   .mg_pieBox {
+  .mg_pieBox {
     width 12px
     height 12px
     border 1px solid #10abff

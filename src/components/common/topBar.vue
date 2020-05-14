@@ -113,9 +113,9 @@ export default {
       }
     },
     setItemClick(item) {
-      if(item.name=='注销'){
-        this.$emit('show-logout',true)
-        return false
+      if (item.name == "注销") {
+        this.$emit("show-logout", true);
+        return false;
       }
       this.$router.push({ name: item.routeName });
       sessionStorage.removeItem("activeIndex");

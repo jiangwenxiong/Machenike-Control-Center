@@ -28,11 +28,11 @@
         <div class="sc_pie" v-show="updateMode==1"></div>
       </div>启用自动更新
       <div class="sc_xx2">
-          <div class="sc_con">
-              <div class="sc_pieBox" @click="updateMode=2">
-        <div class="sc_pie" v-show="updateMode==2"></div>
-      </div>有新的更新时通知我
-          </div>
+        <div class="sc_con">
+          <div class="sc_pieBox" @click="updateMode=2">
+            <div class="sc_pie" v-show="updateMode==2"></div>
+          </div>有新的更新时通知我
+        </div>
       </div>
     </div>
     <div class="sc_item">
@@ -41,13 +41,13 @@
         <div class="sc_pie" v-show="autoStart"></div>
       </div>开启适应屏幕DPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小提示：关闭选项后将保持默认大小，设置后需要重启软件才生效
     </div>
-     <div class="sc_item sc_item2">
+    <div class="sc_item sc_item2">
       <div class="sc_tips">更新日志</div>
       <ul class="sc_logBox">
-          <li class="sc_log" v-for="i in logList">{{i.date}}&nbsp;&nbsp;&nbsp;{{i.itemName}}</li>
+        <li class="sc_log" v-for="i in logList">{{i.date}}&nbsp;&nbsp;&nbsp;{{i.itemName}}</li>
       </ul>
     </div>
-     <div class="sc_item">
+    <div class="sc_item">
       <div class="sc_tips2">关于我们</div>
     </div>
   </div>
@@ -63,24 +63,24 @@ export default {
       showTime: false,
       language: "简体中文",
       languageList: ["简体中文", "English"],
-      updateMode:1,
-      logList:[
-         {
-              itemName: "强制关闭Wallpaper Engnine",
-              date: '2020.04.01'
-            },
-            {
-              itemName: "强制关闭Wallpaper Engnine",
-              date: '2020.03.29'
-            },
-            {
-              itemName: "强制关闭Wallpaper Engnine",
-              date: '2020.03.28'
-            },
-            {
-              itemName: "强制关闭Wallpaper Engnine",
-              date: '2020.03.26'
-            }
+      updateMode: 1,
+      logList: [
+        {
+          itemName: "强制关闭Wallpaper Engnine",
+          date: "2020.04.01"
+        },
+        {
+          itemName: "强制关闭Wallpaper Engnine",
+          date: "2020.03.29"
+        },
+        {
+          itemName: "强制关闭Wallpaper Engnine",
+          date: "2020.03.28"
+        },
+        {
+          itemName: "强制关闭Wallpaper Engnine",
+          date: "2020.03.26"
+        }
       ]
     };
   },
@@ -116,32 +116,31 @@ export default {
       padding-left 14px
       margin-right 70px
     }
-   
-    .sc_xx2{
-        position absolute;
-        top 0;
-        left 260px;
-        .sc_con{
-            position relative;
-            padding-left 30px;
-            .sc_pieBox{
-                left 0;
-            }
+    .sc_xx2 {
+      position absolute
+      top 0
+      left 260px
+      .sc_con {
+        position relative
+        padding-left 30px
+        .sc_pieBox {
+          left 0
         }
+      }
     }
   }
-  .sc_item2{
-      height 74px;
-      .sc_logBox{
-          height 74px;
-          width 234px;
-          background #141a36;
-          overflow-y auto;
-          margin-left -26px
-          li{
-              line-height 12px;
-          }
+  .sc_item2 {
+    height 74px
+    .sc_logBox {
+      height 74px
+      width 234px
+      background #141a36
+      overflow-y auto
+      margin-left -26px
+      li {
+        line-height 12px
       }
+    }
   }
   .sc_pieBox {
     width 12px
@@ -199,14 +198,14 @@ export default {
       }
     }
   }
-   .sc_tips2{
-      height 24px
-      width 78px
-      line-height 24px
-      padding-left 14px
-      margin-right 70px
-      color #fff;
-      background #10a9fd;
-    }
+  .sc_tips2 {
+    height 24px
+    width 78px
+    line-height 24px
+    padding-left 14px
+    margin-right 70px
+    color #fff
+    background #10a9fd
+  }
 }
 </style>

@@ -13,16 +13,16 @@
         <div class="os_switchBtn" :style="{'left':btnLeft2+'px','background':btnLeft2>0?'#fff':''}"></div>
       </div>小提示：退出游戏后，不弹出性能报告窗口，报告保留在历史记录内
     </div>
-     <div class="os_setItem">
+    <div class="os_setItem">
       <div class="os_tips os_tips1">记录间隔</div>
       <div class="os_select" @click="showTime=true" @mouseleave="showTime=false">
-          {{interval}}s
-         <div class="os_down">
-              <img class="os_downImg" src="~@/assets/img/side1/down.png" />
-         </div>
-         <ul class="os_time" v-show="showTime">
-             <li class="os_timeItem"v-for="i in timeSelect"  @click="interval=i;showTime=false" >{{i}}s</li>
-         </ul>
+        {{interval}}s
+        <div class="os_down">
+          <img class="os_downImg" src="~@/assets/img/side1/down.png" />
+        </div>
+        <ul class="os_time" v-show="showTime">
+          <li class="os_timeItem" v-for="i in timeSelect" @click="interval=i;showTime=false">{{i}}s</li>
+        </ul>
       </div>
     </div>
     <div class="os_setItem">
@@ -31,16 +31,16 @@
         <div class="os_switchBtn" :style="{'left':btnLeft3+'px','background':btnLeft3>0?'#fff':''}"></div>
       </div>
     </div>
-     <div class="os_setItem">
+    <div class="os_setItem">
       <div class="os_tips os_tips1">保留最近</div>
-     <div class="os_select" @click="showNum=true" @mouseleave="showNum=false">
-          {{count}}条数据
-         <div class="os_down">
-              <img class="os_downImg" src="~@/assets/img/side1/down.png" />
-         </div>
-         <ul class="os_time" v-show="showNum">
-             <li class="os_timeItem"v-for="i in countItem"  @click="count=i;showNum=false" >{{i}}条</li>
-         </ul>
+      <div class="os_select" @click="showNum=true" @mouseleave="showNum=false">
+        {{count}}条数据
+        <div class="os_down">
+          <img class="os_downImg" src="~@/assets/img/side1/down.png" />
+        </div>
+        <ul class="os_time" v-show="showNum">
+          <li class="os_timeItem" v-for="i in countItem" @click="count=i;showNum=false">{{i}}条</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -55,17 +55,12 @@ export default {
       btnLeft: "-1",
       btnLeft2: "-1",
       btnLeft3: "-1",
-      interval:15,
-      count:20,
-      showTime:false,
-      timeSelect:[
-          15,20,30
-      ],
-      showNum:false,
-      countItem:[
-          20,30,50
-      ],
-
+      interval: 15,
+      count: 20,
+      showTime: false,
+      timeSelect: [15, 20, 30],
+      showNum: false,
+      countItem: [20, 30, 50]
     };
   },
   mounted() {
@@ -125,44 +120,44 @@ export default {
     margin-top 20px
     display flex
     font-size 12px
-    .os_select{
-        height 26px;
-        width 108px;
-        margin-left 30px;
+    .os_select {
+      height 26px
+      width 108px
+      margin-left 30px
+      border 1px solid #10abff
+      line-height 26px
+      padding-left 10px
+      position relative
+      cursor pointer
+      .os_down {
+        position absolute
+        top 0
+        right 0
+        height 24px
+        width 30px
+        background #10abff
+        padding-left 8px
+        padding-top 6px
+        img {
+          height 12px
+        }
+      }
+      .os_time {
+        height 78px
+        width 100%
+        position absolute
+        top 25px
+        left 0
         border 1px solid #10abff
-        line-height 26px;
-        padding-left 10px;
-        position relative;
-        cursor pointer;
-        .os_down{
-            position absolute;
-            top 0;
-            right 0;
-            height 24px;
-            width 30px;
-            background #10abff;
-            padding-left 8px;
-            padding-top 6px;
-            img{
-                height 12px;
-            }
+        background #050b24
+        z-index 100
+        li {
+          height 26px
+          width 100%
+          padding-left 10px
+          border-bottom 1px solid #10abff
         }
-        .os_time{
-            height 78px;
-            width 100%;
-            position absolute;
-            top 25px;
-            left 0;
-            border 1px solid #10abff
-            background #050b24;
-            z-index 100
-            li{
-                height 26px;
-                width 100%;
-                padding-left 10px;
-                border-bottom 1px solid #10abff
-            }
-        }
+      }
     }
     .os_tips {
       height 26px

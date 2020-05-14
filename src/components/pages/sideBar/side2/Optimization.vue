@@ -8,7 +8,7 @@
         <img class="op_gameImg" src="/static/img/game.jpg" />
         <div class="op_btnArea">
           一键优化
-          <div class="op_settingArea"  @click="$router.push({ name: 'Side2Setting' })">
+          <div class="op_settingArea" @click="$router.push({ name: 'Side2Setting' })">
             <img class="op_setIcon" src="~@/assets/img/side2/setting.png" />
           </div>
         </div>
@@ -32,7 +32,7 @@ export default {
     return {
       msg: "",
       gameList: [],
-      loadState:false
+      loadState: false
     };
   },
   mounted() {
@@ -55,32 +55,32 @@ export default {
   padding-top 20px
   padding-left 30px
   position relative
-  .op_fail{
+  .op_fail {
     height 100%
     width 100%
     position absolute
     top 0
     left 0
     background #050b24
-    .op_failImg{
+    .op_failImg {
       position absolute
-      top 120px;
-      left 50%;
+      top 120px
+      left 50%
       margin-left -150px
-
-    }.op_reLink{
-      width: 106px;
-      height: 36px;
-      background-color: #0faafd;
-      border-radius: 2px;
-      color #fff;
-      font-size 14px;
-      line-height 36px;
-      text-align center;
-      position absolute;
-      top 450px;
-      left 50%;
-      margin-left -53px;
+    }
+    .op_reLink {
+      width 106px
+      height 36px
+      background-color #0faafd
+      border-radius 2px
+      color #fff
+      font-size 14px
+      line-height 36px
+      text-align center
+      position absolute
+      top 450px
+      left 50%
+      margin-left -53px
     }
   }
   .op_tit {
