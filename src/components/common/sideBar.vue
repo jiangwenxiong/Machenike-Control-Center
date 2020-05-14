@@ -68,7 +68,7 @@ export default {
           name: "官方驱动",
           icon: sideIcon4,
           activeIcon: sideIcon4a,
-          routeName: "SideDriver"
+          routeName: "Side4Driver"
         },
         {
           name: "硬核软件",

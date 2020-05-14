@@ -42,6 +42,13 @@ router.beforeEach((to, from, next) => {
         },
       ]);
       break;
+      case 'Setting':
+        store.commit("setTopList", [{
+            name: '设置',
+            padding: '55px'
+          }
+        ]);
+        break;
     case 'Side1':
       store.commit("setTopList", [{
           name: '硬件监控',
@@ -67,6 +74,13 @@ router.beforeEach((to, from, next) => {
           routerName: 'Side2Optetting',
           padding: '50px'
         }
+      ]);
+      break;
+      case 'Side4Driver':
+      store.commit("setTopList", [{
+          name: '官方驱动',
+        }
+       
       ]);
       break;
 

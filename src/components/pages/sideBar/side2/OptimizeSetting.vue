@@ -34,7 +34,7 @@
      <div class="os_setItem">
       <div class="os_tips os_tips1">保留最近</div>
      <div class="os_select" @click="showNum=true" @mouseleave="showNum=false">
-          {{count}}条
+          {{count}}条数据
          <div class="os_down">
               <img class="os_downImg" src="~@/assets/img/side1/down.png" />
          </div>

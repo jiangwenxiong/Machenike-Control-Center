@@ -67,19 +67,19 @@ export default {
           name: "设置",
           icon: SetIcon1b,
           activeIcon: SetIcon1w,
-          routeName: "SideHardware"
+          routeName: "Setting"
         },
         {
           name: "更新日志",
           icon: SetIcon2b,
           activeIcon: SetIcon2w,
-          routeName: "SideHardware"
+          routeName: "Setting"
         },
         {
           name: "关于我们",
           icon: SetIcon3b,
           activeIcon: SetIcon3w,
-          routeName: "SideHardware"
+          routeName: "Setting"
         },
         {
           name: "注销",
@@ -113,6 +113,10 @@ export default {
       }
     },
     setItemClick(item) {
+      if(item.name=='注销'){
+        this.$emit('show-logout',true)
+        return false
+      }
       this.$router.push({ name: item.routeName });
       sessionStorage.removeItem("activeIndex");
     }
