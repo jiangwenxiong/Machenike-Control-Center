@@ -74,7 +74,7 @@ export default {
           name: "硬核软件",
           icon: sideIcon5,
           activeIcon: sideIcon5a,
-          routeName: "SideHardcore"
+          routeName: "side5Hardcore"
         },
         {
           name: "机友聚集地",

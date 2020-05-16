@@ -19,10 +19,10 @@ import Side2Optetting from '@/components/pages/sideBar/side2/OptimizeSetting' //
 //侧边栏4 官方驱动
 import Side4Driver from '@/components/pages/sideBar/side4/Driver' //官方驱动
 
-
+//侧边栏5 硬核软件
+import side5Hardcore from '@/components/pages/sideBar/side5/Hardcore' //硬核软件
 
 import SideLight from '@/components/pages/sideBar/side3Light'
-import SideDriver from '@/components/pages/sideBar/side4Driver'
 import SideHardcore from '@/components/pages/sideBar/side5Hardcore'
 import SideGather from '@/components/pages/sideBar/side6Gather'
 
@@ -128,8 +128,8 @@ export default new Router({
     },
     {
       path: '/hardcoresoftware',
-      name: 'SideHardcore',
-      component: SideHardcore,
+      name: 'side5Hardcore',
+      component: side5Hardcore,
       meta: {
         title: '机械师控制中心-硬核软件'
       }

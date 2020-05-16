@@ -82,6 +82,13 @@ router.beforeEach((to, from, next) => {
 
       ]);
       break;
+      case 'side5Hardcore':
+      store.commit("setTopList", [{
+          name: '硬核软件',
+        }
+
+      ]);
+      break;
 
     default:
       break;
