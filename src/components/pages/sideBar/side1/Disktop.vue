@@ -12,7 +12,10 @@
     <div class="dk_text">开启功能后监控硬件数据显示在桌面上，让您更方便查看硬件状态</div>
     <div class="dk_titItem">桌面实时监控硬件，更了解您的电脑状态</div>
     <img class="dk_screen" src="/static/img/disk.png" />
-    <div class="dk_setting"></div>
+    <!-- <div class="dk_setting" v-show="btnLeft>-1"> -->
+    <div class="dk_setting">
+      
+    </div>
   </div>
 </template>
 

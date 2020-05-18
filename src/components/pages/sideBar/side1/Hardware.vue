@@ -44,6 +44,7 @@
                     v-html="i"
                   ></div>
                 </div>
+                
               </li>
             </ul>
           </div>
@@ -625,7 +626,7 @@ export default {
   margin-top 6px
   .hw_infoItem {
     width 488px
-    height 48px
+    height auto;
     background url('~@/assets/img/side1/infobg.png') no-repeat 100% 100%
     margin-top 14px
     display flex
