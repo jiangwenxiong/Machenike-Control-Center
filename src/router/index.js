@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/pages/login' //登录页
+import Register from '@/components/pages/register' //注册页
 import Index from '@/components/pages/index' //登录首页
 import Personal from '@/components/pages/personal' //个人信息页  
 import Setting from '@/components/pages/setting' //设置  
@@ -23,7 +24,6 @@ import Side4Driver from '@/components/pages/sideBar/side4/Driver' //官方驱动
 import side5Hardcore from '@/components/pages/sideBar/side5/Hardcore' //硬核软件
 
 import SideLight from '@/components/pages/sideBar/side3Light'
-import SideHardcore from '@/components/pages/sideBar/side5Hardcore'
 import SideGather from '@/components/pages/sideBar/side6Gather'
 
 Vue.use(Router)
@@ -36,6 +36,14 @@ export default new Router({
       component: Login,
       meta: {
         title: '机械师控制中心-登录'
+      }
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
+      meta: {
+        title: '机械师控制中心-注册'
       }
     },
     {

@@ -1,20 +1,9 @@
 <template>
   <div class="contant">
     <div class="loginContant">
-      <img class="logo" src="~@/assets/img/login/logo.png" />
-      <div class="loginTip">登录您的MACHENIKE账号</div>
-      <img
-        class="loginByWechat"
-        @click="shoWechatLogin = true;"
-        src="~@/assets/img/login/wechat.png"
-      />
-      <div class="loginItem">
-        <img class="orline orline1" src="~@/assets/img/login/orline.png" />
-        <img class="orline orline2" src="~@/assets/img/login/orline.png" />
-        or
-      </div>
+      <div class="registerTit">手机注册</div>
       <div class="loginItem loginItem2">
-        <div class="tip">邮箱</div>
+        <div class="tip">手机号码</div>
         <input class="loginInp" type="text" name="email" />
       </div>
       <div class="loginItem loginItem2">
@@ -23,15 +12,24 @@
         <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
       </div>
       <div class="loginItem loginItem2">
+        <div class="tip">确认密码</div>
+        <input class="loginInp password" :type="intType" name="password" />
+        <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
+      </div>
+      <div class="loginItem loginItem2">
         <div class="tip">验证码</div>
         <input class="loginInp testCode" type="text" name="testCode" />
         <div class="testCodeArea">9527</div>
       </div>
-      <div class="goBtn" @click="$router.push({ name: 'Index'});">登录</div>
+       <div class="loginItem loginItem2">
+        <div class="tip">短信验证码</div>
+        <input class="loginInp testCode" type="text" name="testCode" />
+        <div class="testCodeArea testCodeArea2">获取短信验证码</div>
+      </div>
+      <div class="goBtn" @click="$router.push({ name: 'Index'});">同意协议并注册</div>
       <div class="elseBox">
-        <div class="forgetPwd">忘记密码?</div>
-        <div class="tip">你已经拥有账户了吗？</div>
-        <div class="register" @click="$router.push({ name: 'Register'});">注册</div>
+        <div class="tip">我已注册，现在就</div>
+        <div class="register" @click="$router.push({ name: 'Login'});">登录</div>
       </div>
     </div>
     <div class="loginMask" v-show="shoWechatLogin">
@@ -87,6 +85,19 @@ export default {
   margin 0 auto
   overflow hidden
   padding-top 40px
+}
+.registerTit{
+    margin: 0 auto;
+    width: 348px;
+    height: 46px;
+    margin-bottom 40px;
+    font-size 16px;
+    color #10abff
+    line-height 46px;
+    text-align center;
+    border solid 1px #10abff
+    box-shadow inset 0px 0px 30px 1px #10abff
+    border-radius 3px;
 }
 .logo {
   display block
@@ -147,6 +158,13 @@ export default {
   color #10abff
   text-align center
   cursor pointer
+}
+.testCodeArea2{
+  font-size 14px;
+  letter-spacing 0px
+  border solid 1px #10abff
+  background #050b24
+  box-shadow inset 0px 0px 5px 1px #10abff
 }
 .elseBox {
   width 348px
