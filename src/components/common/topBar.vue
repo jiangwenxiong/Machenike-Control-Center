@@ -91,7 +91,7 @@ export default {
           name: "退出",
           icon: SetIcon5b,
           activeIcon: SetIcon5w,
-          routeName: "SideHardware"
+          routeName: "Login"
         }
       ]
     };
