@@ -97,7 +97,15 @@ body {
     padding-left:2px;
     margin-bottom: 4px;
 }
-
+.warningTips{
+    width:200px;
+    height: 14px;
+    text-align: left;
+    position: absolute;
+    top:33px;
+    right: -214px;
+    color:red;
+}
 .hiddenPwd{
     position: absolute;
     top: 38px;
@@ -114,6 +122,9 @@ body {
     color: #10abff;
     font-size: 14px;
     padding:0 10px;
+}
+.failInpCss{
+    border: solid 1px red;
 }
 .loginInp:focus{
      border: solid 1px #10abff;

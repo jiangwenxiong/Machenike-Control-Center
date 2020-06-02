@@ -3,29 +3,32 @@
     <div class="loginContant">
       <img class="logo" src="~@/assets/img/login/logo.png" />
       <div class="loginTip">登录您的MACHENIKE账号</div>
-      <img
+      <!-- <img
         class="loginByWechat"
         @click="shoWechatLogin = true;"
         src="~@/assets/img/login/wechat.png"
-      />
-      <div class="loginItem">
+      /> -->
+      <!-- <div class="loginItem">
         <img class="orline orline1" src="~@/assets/img/login/orline.png" />
         <img class="orline orline2" src="~@/assets/img/login/orline.png" />
         or
-      </div>
+      </div> -->
       <div class="loginItem loginItem2">
-        <div class="tip">邮箱</div>
-        <input class="loginInp" type="text" name="email" />
+        <div class="tip">手机号码</div>
+        <input class="loginInp" type="text" :class="phoneFail?'failInpCss':''" name="phone" @focus="phoneFail=true" />
+        <div class="warningTips" v-show="phoneFail">请输入正确的手机号码</div>
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">密码</div>
-        <input class="loginInp password" :type="intType" name="password" />
+        <input class="loginInp password" :class="passwordFail?'failInpCss':''" :type="intType" name="password" @focus="passwordFail=true" />
         <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
+        <div class="warningTips"  v-show="passwordFail">密码错误</div>
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">验证码</div>
-        <input class="loginInp testCode" type="text" name="testCode" />
+        <input class="loginInp testCode" :class="testcodeFail?'failInpCss':''" type="text" name="testCode"  @focus="testcodeFail=true"/>
         <div class="testCodeArea">9527</div>
+         <div class="warningTips" v-show="testcodeFail">验证码错误</div>
       </div>
       <div class="goBtn" @click="$router.push({ name: 'Index'});">登录</div>
       <div class="elseBox">
@@ -57,7 +60,10 @@ export default {
     return {
       msg: "",
       shoWechatLogin: false,
-      intType: "password"
+      intType: "password",
+      phoneFail:false,
+      passwordFail:false,
+      testcodeFail:false
     };
   },
   mounted() {
@@ -85,8 +91,7 @@ export default {
   width 350px
   height 100%
   margin 0 auto
-  overflow hidden
-  padding-top 40px
+  padding-top 100px
 }
 .logo {
   display block

@@ -4,27 +4,32 @@
       <div class="registerTit">手机注册</div>
       <div class="loginItem loginItem2">
         <div class="tip">手机号码</div>
-        <input class="loginInp" type="text" name="email" />
+        <input class="loginInp" type="text" name="email" :class="phoneFail?'failInpCss':''" />
+        <div class="warningTips" v-show="phoneFail">请输入正确的手机号码</div>
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">密码</div>
-        <input class="loginInp password" :type="intType" name="password" />
+        <input class="loginInp password" :type="intType" name="password" :class="passwordFail?'failInpCss':''" />
         <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
+        <div class="warningTips" v-show="passwordFail">密码错误</div>
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">确认密码</div>
-        <input class="loginInp password" :type="intType" name="password" />
+        <input class="loginInp password" :type="intType" name="password" :class="password2Fail?'failInpCss':''" />
         <img class="hiddenPwd" @click="changePwd" src="~@/assets/img/login/hiddenPwd.png" />
+        <div class="warningTips" v-show="password2Fail">两次输入密码不一致</div>
       </div>
       <div class="loginItem loginItem2">
         <div class="tip">验证码</div>
-        <input class="loginInp testCode" type="text" name="testCode" />
+        <input class="loginInp testCode" type="text" name="testCode" :class="testcodeFail?'failInpCss':''" />
         <div class="testCodeArea">9527</div>
+        <div class="warningTips" v-show="testcodeFail">验证码不正确</div>
       </div>
        <div class="loginItem loginItem2">
         <div class="tip">短信验证码</div>
-        <input class="loginInp testCode" type="text" name="testCode" />
+        <input class="loginInp testCode" type="text" name="testCode" :class="messageFail?'failInpCss':''" />
         <div class="testCodeArea testCodeArea2">获取短信验证码</div>
+         <div class="warningTips" v-show="messageFail">短信验证码不正确</div>
       </div>
       <div class="goBtn" @click="$router.push({ name: 'Index'});">同意协议并注册</div>
       <div class="elseBox">
@@ -42,7 +47,13 @@ export default {
     return {
       msg: "",
       shoWechatLogin: false,
-      intType: "password"
+      intType: "password",
+      phoneFail:true,
+      passwordFail:true,
+      password2Fail:true,
+      messageFail:true,
+      testcodeFail:true
+
     };
   },
   mounted() {
@@ -70,7 +81,6 @@ export default {
   width 350px
   height 100%
   margin 0 auto
-  overflow hidden
   padding-top 40px
 }
 .registerTit{
