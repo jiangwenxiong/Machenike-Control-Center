@@ -2,7 +2,7 @@
   <div class="sideBar">
     <img class="sideBg" src="/static/img/sideBg.png" />
     <ul class="sideBox">
-      <li class="loginCon" @click>
+      <li class="loginCon">
         <img class="loginIcon" src="~@/assets/img/sidebar/loginicon.png" />
         <div class="loginTit">
           <span class="loginCN">登&nbsp;&nbsp;录</span>
@@ -82,7 +82,7 @@ export default {
           activeIcon: sideIcon6a,
           routeName: "SideGather"
         }
-      ]
+      ] 
     };
   },
   mounted() {

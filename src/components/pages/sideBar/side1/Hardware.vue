@@ -21,7 +21,7 @@
               <span class="hw_tipsName">扫描时间</span>|
               <span class="hw_infoTime">2020-03-10&nbsp;14:30</span>
               <div class="hw_reBtn">重新扫描</div>
-              <div class="hw_details">详情</div>
+              <div class="hw_details" @click="showDetailsPage=true;" >详情</div>
             </div>
             <ul class="hw_infoItems">
               <li class="hw_infoItem" v-for="item in itemList">
@@ -111,6 +111,154 @@
         </div>
       </div>
     </div>
+    <div class="hw_detailsPage" v-show="showDetailsPage">
+        <div class="hw_detailsCon">
+          <div class="hw_deTitle">
+            <img class="hw_logo" src="~@/assets/img/login/logo.png" />机械师控制中心  V0.1  硬件信息
+            <img class="hw_close" @click="showDetailsPage=false;" src="~@/assets/img/topbar/close.png" />
+            </div>
+            <ul class="hw_deInfoBox">
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive1?'hw_deInfoItemtitact':''" @click="infoItemActive1=!infoItemActive1"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/gk.png" />
+                  硬件概况
+                   <img class="hw_zsJiao" v-show="infoItemActive1" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive1" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive1"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive1">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+  
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit"  :class="infoItemActive2?'hw_deInfoItemtitact':''" @click="infoItemActive2=!infoItemActive2"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item2.png" />
+                  处理器
+                    <img class="hw_zsJiao" v-show="infoItemActive2" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive2" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive2"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive2">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive3?'hw_deInfoItemtitact':''"  @click="infoItemActive3=!infoItemActive3"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item3.png" />
+                  显卡
+                    <img class="hw_zsJiao" v-show="infoItemActive3" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive3" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive3"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive3">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive4?'hw_deInfoItemtitact':''"  @click="infoItemActive4=!infoItemActive4"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item4.png" />
+                  硬盘
+                    <img class="hw_zsJiao" v-show="infoItemActive4" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive4" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive4"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive4">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive5?'hw_deInfoItemtitact':''"  @click="infoItemActive5=!infoItemActive5"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item5.png" />
+                  主板
+                   <img class="hw_zsJiao" v-show="infoItemActive5" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive5" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive5"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive5">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive6?'hw_deInfoItemtitact':''"  @click="infoItemActive6=!infoItemActive6"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item6.png" />
+                  显示器
+                    <img class="hw_zsJiao" v-show="infoItemActive6" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive6" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive6"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive6">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive7?'hw_deInfoItemtitact':''"  @click="infoItemActive7=!infoItemActive7"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item7.png" />
+                  内存
+                    <img class="hw_zsJiao" v-show="infoItemActive7" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive7" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive7"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive7">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+              <li class="hw_deInfoItem">
+                <div class="hw_deInfoItemtit" :class="infoItemActive8?'hw_deInfoItemtitact':''"  @click="infoItemActive8=!infoItemActive8"> 
+                  <img class="hw_deInfoIcon" src="~@/assets/img/side1/item8.png" />
+                  网卡
+                    <img class="hw_zsJiao" v-show="infoItemActive8" src="~@/assets/img/side1/down2.png" />
+                   <img class="hw_zsJiao" v-show="!infoItemActive8" src="~@/assets/img/side1/left.png" />
+                   <div class="hw_deMask" v-show="!infoItemActive8"></div>
+                  </div>
+                  <ul class="hw_infoDetail"  v-show="infoItemActive8">
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">系统</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">处理器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显卡</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">主板</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">显示器</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                    <li class="hw_infoDetailItem"><div class="hw_IDname">内存</div><div class="hw_IDvalue">Windows 10 专业版 64位</div></li>
+                  </ul>
+              </li>
+            </ul>
+            <div class="hw_deFooter"><span>扫描时间   2020-05-25 12：15</span></div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -133,6 +281,15 @@ export default {
     return {
       msg: "",
       progress: 63,
+      showDetailsPage:false,
+      infoItemActive1:true,
+      infoItemActive2:false,
+      infoItemActive3:false,
+      infoItemActive4:false,
+      infoItemActive5:false,
+      infoItemActive6:false,
+      infoItemActive7:false,
+      infoItemActive8:false,
       itemList: [
         {
           name: "系统",
@@ -321,6 +478,127 @@ export default {
   width 100%
   color #10a9fd
   overflow hidden
+}
+.hw_detailsPage{
+  height 100%;
+  width 100%;
+  background rgba(0,0,0,.5);
+  position absolute;
+  top 0;
+  left 0;
+  overflow hidden
+  .hw_detailsCon{
+    height 562px;
+    width 802px;
+    margin-left 140px;
+    margin-top 70px;
+    background #050b24;
+    position relative;
+    .hw_deTitle{
+      height 38px;
+      width 100%;
+      line-height 38px;
+      background #141a36;
+      font-size 12px;
+      color #10abff;
+      padding-left 40px;
+      .hw_logo{
+        height 20px;
+        position absolute;
+        top 8px;
+        left 10px;
+      }
+      .hw_close{
+        position absolute;
+        top 12px;
+        right 20px;
+        cursor pointer;
+      }
+    }
+    .hw_deFooter{
+      height 30px;
+      width 100%;
+      font-size 12px;
+      color #10aafd;
+      background #141a36;
+      line-height 30px;
+      text-align right;
+      padding-right 20px;
+      position absolute;
+      bottom 0;
+      left 0;
+      span{
+        opacity .5;
+      }
+    }
+    .hw_deInfoBox{
+      width 100%;
+      height 494px;
+      overflow auto;
+      .hw_deInfoItem{
+        min-height 38px;
+        width 100%;
+        .hw_infoDetail{
+          height 204px;
+          width 100%;
+         padding-top 10px;
+          .hw_infoDetailItem{
+            height 30px;
+            width 100%;
+            padding-left 56px;
+            font-size 14px;
+            line-height 30px;
+            color #10aafd;
+            div{
+              display inline-block;
+            }
+            .hw_IDname{
+              width 100px;
+            }
+            .hw_IDvalue{
+              margin-left 200px;
+            }
+          }
+        }
+        .hw_deInfoItemtit{
+          height 38px;
+          width 100%;
+          position relative;
+          border-bottom 1px solid #0b5b91;
+          border-top 1px solid #0b5b91;
+          line-height 38px;
+          font-size 14px;
+          color #10aafd;
+          padding-left 56px;
+          margin 0;
+          cursor pointer;
+         
+          .hw_deMask{
+            height 100%;
+            width 100%;
+            background rgba(0,0,0,.5);
+            position absolute;
+            top 0;
+            left 0;
+          }
+          .hw_deInfoIcon{
+            height 20px;
+            position absolute;
+            top 8px;
+            left 16px;
+          }
+          .hw_zsJiao{
+            position absolute;
+            top 12px;
+            right 20px;
+          }
+        }
+        .hw_deInfoItemtitact{
+           box-shadow inset 0px 0px 20px 1px #10abff
+        }
+      }
+    }
+  }
 }
 .hardwareLoader {
   height 120px

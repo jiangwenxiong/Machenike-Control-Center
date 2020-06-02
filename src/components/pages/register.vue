@@ -32,19 +32,6 @@
         <div class="register" @click="$router.push({ name: 'Login'});">登录</div>
       </div>
     </div>
-    <div class="loginMask" v-show="shoWechatLogin">
-      <div class="loginINwechat">
-        <div class="titBar">
-          <img @click="shoWechatLogin = false;" class="close2" src="~@/assets/img/login/close.png" />
-        </div>
-        <div class="maskTips">Log In To WeChat</div>
-        <img class="ercode" src="~@/assets/img/login/ercode.png" />
-        <div class="maskTips2">
-          Scan QR Code in WeChat to log in
-          <br />"Machenike"
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 

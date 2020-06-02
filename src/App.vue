@@ -21,6 +21,9 @@
         </div>
       </div>
     </div>
+    <div class="installMask">
+       
+    </div>
   </div>
 </template>
 
@@ -37,7 +40,7 @@ export default {
     };
   },
   components: {
-    TopBar,
+    TopBar, 
     SideBar
   },
   methods: {
