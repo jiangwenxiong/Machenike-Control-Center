@@ -23,7 +23,7 @@
         <div class="tip">验证码</div>
         <input class="loginInp testCode" type="text" name="testCode" :class="testcodeFail?'failInpCss':''" />
         <div class="testCodeArea">9527</div>
-        <div class="warningTips" v-show="testcodeFail">验证码不正确</div>
+        <div class="warningTips" v-show="testcodeFail">验证码错误</div>
       </div>
        <div class="loginItem loginItem2">
         <div class="tip">短信验证码</div>
