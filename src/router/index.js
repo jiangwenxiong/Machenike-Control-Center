@@ -9,6 +9,7 @@ import Setting from '@/components/pages/setting' //设置
 //侧边栏1 硬件监控
 import Side1Hardware from '@/components/pages/sideBar/side1/Hardware' //硬件监控
 import Side1Disktop from '@/components/pages/sideBar/side1/Disktop' //桌面监控
+import Side1InGame from '@/components/pages/sideBar/side1/Ingame' //系统管理
 import Side1Management from '@/components/pages/sideBar/side1/Management' //系统管理
 
 //侧边栏2 游戏加速
@@ -84,6 +85,14 @@ export default new Router({
       component: Side1Disktop,
       meta: {
         title: '机械师控制中心-桌面监控'
+      }
+    },
+    {
+      path: '/ingame',
+      name: 'Side1InGame',
+      component: Side1InGame,
+      meta: {
+        title: '机械师控制中心-游戏监控'
       }
     },
     {

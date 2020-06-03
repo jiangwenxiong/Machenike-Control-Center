@@ -96,7 +96,7 @@
                       v-for="i,index in tempItems"
                       :class="'hw_tempItem'+index"
                       @click="choseTemp(i)"
-                    >{{i.name}}</li>
+                    >{{i.name}}</li>+
                   </ul>
                 </div>
               </div>

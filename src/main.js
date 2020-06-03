@@ -58,6 +58,10 @@ router.beforeEach((to, from, next) => {
           routerName: 'Side1Disktop'
         },
         {
+          name: '游戏监控',
+          routerName: 'Side1InGame'
+        },
+        {
           name: '系统管理',
           routerName: 'Side1Management'
         },
