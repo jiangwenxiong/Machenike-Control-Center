@@ -29,8 +29,8 @@
         <div class="dk_styleTips">恢复默认</div>
         <div class="dk_styledesc">当前为透明皮肤</div>
         <div class="dk_styleList">
-          <div class="dk_styleItem"></div>
-          <div class="dk_styleItem"></div>
+          <div class="dk_styleItem" @click="showWindow1=true"></div>
+          <div class="dk_styleItem" @click="showWindow2=true"></div>
           <div class="dk_styleItem"></div>
           <div class="dk_styleItem"></div>
           <div class="dk_styleItem"></div>
@@ -71,6 +71,40 @@
         </ul>
       </div>
     </div>
+    <div class="logoutMask" v-show="showWindow1">
+      <div class="logoutCon">
+        <div class="logTitle">
+          温馨提示
+          <img class="baseClose" @click="showWindow1=false" src="~@/assets/img/login/close.png" />
+        </div>
+        <div class="logContant">
+          <div class="logtips">
+            该功能将默认开启游戏加加，请确认您的电脑内有预装游戏加加在请使用该功能
+          </div>
+          <div class="rember"  @click="isRember=!isRember"> <img class="ins_check" v-show="isRember" src="~@/assets/img/install/check.png"/></div>
+          <div class="remberTs">不再提示</div>
+          <div class="logBtn">确定</div>
+          <div class="logBtn logBtn2" @click="showWindow1=false">取消</div>
+        </div>
+      </div>
+    </div>
+    <div class="logoutMask" v-show="showWindow2">
+      <div class="logoutCon">
+        <div class="logTitle">
+          温馨提示
+          <img class="baseClose" @click="showWindow2=false" src="~@/assets/img/login/close.png" />
+        </div>
+        <div class="logContant">
+          <div class="logtips logtips2">
+            若要更换此皮肤，系统会默认打开游戏加加。
+          </div>
+          <div class="rember"  @click="isRember2=!isRember2"> <img class="ins_check" v-show="isRember2" src="~@/assets/img/install/check.png"/></div>
+          <div class="remberTs">不再提示</div>
+          <div class="logBtn">确定</div>
+          <div class="logBtn logBtn2" @click="showWindow2=false">取消</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -83,6 +117,10 @@ export default {
       btnLeft: -1,
       btnLeft2: 13,
       elseSetting: true,
+      showWindow1:false,
+      showWindow2:true,
+      isRember:true,
+      isRember2:true,
       displayMode: [
         {
           name: "默认",
@@ -321,6 +359,48 @@ export default {
       position absolute
       top -1px
       left -1px
+    }
+  }
+  .logoutCon{
+    left 25%;
+    width:382px;
+    .logtips{
+      padding-left 40px;
+      padding-right 40px;
+      height: 40px;
+      margin-top: 10px;
+    }
+    .logtips2{
+      padding 0;
+      text-align center;
+      margin-top 20px;
+    }
+    .logBtn{
+      left 120px;
+    }
+    .logBtn2{
+      left 220px;
+    }
+    .rember{
+      position absolute;
+      height 10px;
+      width 10px;
+      border 1px solid #10a9fd
+      border-radius 10px;
+      top 68px;
+      left 10px;
+      .ins_check{
+        width 6px;
+        margin-top 2px;
+        margin-left 1px;
+        cursor pointer
+      }
+
+    }
+    .remberTs{
+      position absolute;
+      top 64px;
+      left 24px;
     }
   }
 }

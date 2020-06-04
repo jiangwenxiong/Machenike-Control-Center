@@ -28,14 +28,32 @@
        <div class="loginItem loginItem2">
         <div class="tip">短信验证码</div>
         <input class="loginInp testCode" type="text" name="testCode" :class="messageFail?'failInpCss':''" />
-        <div class="testCodeArea testCodeArea2">获取短信验证码</div>
+        <div class="testCodeArea testCodeArea2" :class="isSend?'issend':''" @click="isSend = true">{{isSend?'重发验证（60s）':'获取短信验证码'}}</div>
          <div class="warningTips" v-show="messageFail">短信验证码不正确</div>
       </div>
+      <div class="agreement">我以阅读并同意<span @click="showAgreement=true">《用户注册协议》</span></div>
       <div class="goBtn" @click="$router.push({ name: 'Index'});">同意协议并注册</div>
       <div class="elseBox">
         <div class="tip">我已注册，现在就</div>
         <div class="register" @click="$router.push({ name: 'Login'});">登录</div>
       </div>
+    </div>
+    <div class="hw_detailsPage" v-show="showAgreement">
+        <div class="hw_detailsCon">
+          <div class="hw_deTitle">
+            <img class="hw_logo" src="~@/assets/img/login/logo.png" />机械师控制中心  V0.1  协议内容
+            <img class="hw_close" @click="showAgreement=false;" src="~@/assets/img/topbar/close.png" />
+            </div>
+            <div class="agreementInfo">
+              <div class="title">您好！</div>
+              <div class="title">欢迎加入机械师大家庭。</div>
+              <p>1.协议内容</p>
+              <p>机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范!</p>
+              <p>2.协议内容</p>
+              <p>机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范!机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范机械师游戏本[MACHENIKE]，互联网定制游戏本品牌!机械师笔记本成立于2014年，是由全球顶尖IT厂商蓝天、广达、INTEL、NVIDIA、Microsoft等联手打造的中高端游戏本品牌。通过互联网渠道售卖，拥有专门的物流及售后保障，旨在为游戏玩家打造出高品质、高体验度、能够任性玩耍的游戏笔记本!品牌slogan为：任性玩出范</p>
+            </div>
+           
+        </div>
     </div>
   </div>
 </template>
@@ -52,7 +70,9 @@ export default {
       passwordFail:true,
       password2Fail:true,
       messageFail:true,
-      testcodeFail:true
+      testcodeFail:true,
+      isSend:false,
+      showAgreement:true
 
     };
   },
@@ -160,8 +180,13 @@ export default {
   font-size 14px;
   letter-spacing 0px
   border solid 1px #10abff
+  background #10abff;
+  color #fff;
+}
+.issend{
+  color #10abff
   background #050b24
-  box-shadow inset 0px 0px 5px 1px #10abff
+  box-shadow inset 0px 0px 5px 1px #10abff 
 }
 .elseBox {
   width 348px
@@ -250,6 +275,71 @@ export default {
   text-align center
   padding 15px 0
   margin-top 20px
+}
+.agreement{
+  width 100%;
+  height 10px;
+  color #fff;
+  font-size 12px;
+  text-align center
+  span{
+    color #10abff;
+    cursor pointer;
+  }
+}
+.hw_detailsPage{
+  height 100%;
+  width 100%;
+  background rgba(0,0,0,.5);
+  position absolute;
+  top 0;
+  left 0;
+  overflow hidden
+  .hw_detailsCon{
+    height 562px;
+    width 802px;
+    margin-left 140px;
+    margin-top 70px;
+    background #050b24;
+    position relative;
+    .hw_deTitle{
+      height 38px;
+      width 100%;
+      line-height 38px;
+      background #141a36;
+      font-size 12px;
+      color #10abff;
+      padding-left 40px;
+      .hw_logo{
+        height 20px;
+        position absolute;
+        top 8px;
+        left 10px;
+      }
+      .hw_close{
+        position absolute;
+        top 12px;
+        right 20px;
+        cursor pointer;
+      }
+    }
+    
+  }
+}
+.agreementInfo{
+  width 100%;
+  height 520px;
+  overflow auto;
+  padding 20px;
+  color #10abff
+  .title{
+    font-size 18px;
+    margin-bottom 10px;
+  }
+  p{
+    font-size 14px;
+    line-height 20px;
+  }
 }
 /* login.html(登录页) css end */
 </style>

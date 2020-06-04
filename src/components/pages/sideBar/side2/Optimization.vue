@@ -6,17 +6,40 @@
     <ul class="op_gameList">
       <li class="op_gameItem" v-for="i in gameList">
         <img class="op_gameImg" src="/static/img/game.jpg" />
-        <div class="op_btnArea">
+        <!-- <div class="op_btnArea">
           一键优化
           <div class="op_settingArea" @click="$router.push({ name: 'Side2Setting' })">
             <img class="op_setIcon" src="~@/assets/img/side2/setting.png" />
           </div>
-        </div>
+        </div> -->
+      
         <div class="op_mask">
-          <img class="op_flash" src="~@/assets/img/side2/f.png" />
-          <div class="op_hover">一键优化</div>
+          <div v-show="i.showFast">
+           <div class="op_zd">不置顶</div>
+           <div class="op_remove">
+             <img class="op_removeIcon" src="~@/assets/img/side2/remove.png" />
+             移除
+             </div>
+             <div class="op_fps">
+               <div class="op_fpsItem">游戏加速
+                 <div class="redPoint"></div>
+               </div>
+               <div class="op_fpsItem">提升游戏FPS</div>
+             </div>
+             <div class="op_server">
+               <div class="op_serverItem">网络加速
+                  <div class="redPoint"></div>
+               </div>
+               <div class="op_serverItem">当前区服：美服</div>
+               <div class="op_serverItem">智能节点</div>
+             </div>
+             </div>
+           <div class="op_hover">英雄联盟LOL</div>
+           <img class="op_flash op_flash1" v-show="!i.showFast" @click="i.showFast=true" src="~@/assets/img/side2/f.png" />
+           <img class="op_flash"  v-show="i.showFast" @click="i.showFast=false" src="~@/assets/img/side2/fb.png" />
         </div>
       </li>
+      <li class="op_gameItem op_addGame"></li>
     </ul>
     <div class="op_fail" v-show="loadState">
       <img class="op_failImg" src="/static/img/fail.png" />
@@ -32,13 +55,13 @@ export default {
     return {
       msg: "",
       gameList: [],
-      loadState: false
+      loadState: false,
     };
   },
   mounted() {
     var that = this;
-    for (let index = 0; index < 50; index++) {
-      const element = { game: index };
+    for (let index = 0; index < 5; index++) {
+      const element = { game: index ,showFast:false};
       that.gameList.push(element);
     }
   },
@@ -110,8 +133,8 @@ export default {
     margin-top 10px
     overflow-y auto
     .op_gameItem {
-      width 144px
-      height 186px
+      width 176px
+      height 229px
       border-radius 12px
       margin-right 24px
       margin-top 20px
@@ -119,10 +142,63 @@ export default {
       overflow hidden
       position relative
       cursor pointer
-      &:hover {
-        .op_mask {
-          display block
+      .op_zd{
+        width: 52px;
+        height: 20px;
+        background: rgba(0,0,0,.5);
+        border-radius: 3px;
+        color:#fff;
+        font-size 12px;
+        line-height 20px;
+        text-align center;
+        position absolute;
+        top 10px;
+        left 10px;
+      }
+      .op_remove{
+        width: 52px;
+        height: 20px;
+        background: rgba(0,0,0,.5);
+        border-radius: 3px;
+        color:#fff;
+        font-size 12px;
+        line-height 20px;
+        text-align center;
+        position absolute;
+        top 10px;
+        right 10px;
+        padding-left 14px;
+        .op_removeIcon{
+          position absolute;
+          top 4px;
+          left 6px;
         }
+      }
+      .op_fps{
+        width: 152px;
+        height: 42px;
+        background: rgba(0,0,0,.5);
+        border-radius: 3px;
+        color:#fff;
+        font-size 12px;
+        margin 0 auto;
+        margin-top 46px;
+        line-height 20px;
+        padding-left 10px;
+        position relative
+      }
+      .op_server{
+        width: 152px;
+        height: 62px;
+        background: rgba(0,0,0,.5);
+        border-radius: 3px;
+        color:#fff;
+        font-size 12px;
+        margin 0 auto;
+        margin-top 10px;
+        line-height 20px;
+        padding-left 10px;
+         position relative
       }
       .op_gameImg {
         width 100%
@@ -133,25 +209,29 @@ export default {
         left 0
         height 100%
         width 100%
-        background rgba(0, 0, 0, 0.5)
-        display none
         .op_hover {
-          height 30px
+          height 40px
           width 100%
           position absolute
           bottom 0
           left 0
-          background #10abff
-          text-align center
+          background linear-gradient(to top, #000 0%, transparent)
+          text-align left;
+          padding-left 16px
           color #fff
-          line-height 30px
+          line-height 34px
           font-size 12px
         }
         .op_flash {
+          height 36px;
           position absolute
-          left 50%
-          top 70px
-          margin-left -10px
+          right 16px
+          bottom 8px
+        }
+        .op_flash1{
+          height 29px;
+          bottom 12px
+          right 19px;
         }
       }
       .op_btnArea {
@@ -183,6 +263,19 @@ export default {
         }
       }
     }
+    .op_addGame{
+       background url('~@/assets/img/side2/addgame.png') no-repeat 100% 100%;
+       border-radius none;
+    }
+  }
+  .redPoint{
+    width: 9px;
+    height: 9px;
+    border-radius 9px;
+    position absolute
+    top 5px
+    left 62px
+    background-color: #ff0000;
   }
 }
 </style>

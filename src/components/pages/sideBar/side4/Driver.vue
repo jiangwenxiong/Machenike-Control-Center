@@ -262,6 +262,7 @@ export default {
     position absolute
     top 20px
     right 60px
+    cursor pointer;
   }
   .od_loadTip3 {
     font-size 14px

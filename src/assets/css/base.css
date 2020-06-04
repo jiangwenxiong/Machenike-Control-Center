@@ -129,5 +129,35 @@ body {
 .loginInp:focus{
      border: solid 1px #10abff;
 }
+.next{
+    width: 132px;
+	height: 46px;
+	background-color: #10abff;
+    border-radius: 2px;
+    color:#fff;
+    text-align: center;
+    line-height: 46px;
+    font-size: 14px;
+    line-height: 46px;
+    position: absolute;
+    bottom: 95px;
+    right: 62px;
+    cursor: pointer;
 
+}
+.next2{
+    width: 132px;
+	height: 46px;
+	background: url('~@/assets/img/install/btnbg.png') no-repeat 100% 100%;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 46px;
+    font-size: 14px;
+    line-height: 46px;
+    position: absolute;
+    bottom: 95px;
+    right: 214px;
+    cursor: pointer;
+
+}
 /* input css end */

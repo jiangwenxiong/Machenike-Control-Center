@@ -4,7 +4,13 @@ import Login from '@/components/pages/login' //登录页
 import Register from '@/components/pages/register' //注册页
 import Index from '@/components/pages/index' //登录首页
 import Personal from '@/components/pages/personal' //个人信息页  
-import Setting from '@/components/pages/setting' //设置  
+import Setting from '@/components/pages/setting' //设置 
+import InstallPage from '@/components/common/Install' //安装
+import Installing from '@/components/common/Installing' //安装中 
+import Installed from '@/components/common/Installed' //安装完成 
+import UnstallPage from '@/components/common/Unstall' //卸载
+import Unstalling from '@/components/common/Unstalling' //安装中 
+import Unstalled from '@/components/common/Unstalled' //安装完成 
 
 //侧边栏1 硬件监控
 import Side1Hardware from '@/components/pages/sideBar/side1/Hardware' //硬件监控
@@ -69,6 +75,54 @@ export default new Router({
       component: Setting,
       meta: {
         title: '机械师控制中心-设置'
+      }
+    },
+    {
+      path: '/install',
+      name: 'InstallPage',
+      component: InstallPage,
+      meta: {
+        title: '机械师控制中心-安装向导'
+      }
+    },
+    {
+      path: '/installing',
+      name: 'Installing',
+      component: Installing,
+      meta: {
+        title: '机械师控制中心-安装中'
+      }
+    },
+    {
+      path: '/installed',
+      name: 'Installed',
+      component: Installed,
+      meta: {
+        title: '机械师控制中心-安装完成'
+      }
+    },
+    {
+      path: '/unstall',
+      name: 'UnstallPage',
+      component: UnstallPage,
+      meta: {
+        title: '机械师控制中心-安装完成'
+      }
+    },
+    {
+      path: '/unstalling',
+      name: 'Unstalling',
+      component: Unstalling,
+      meta: {
+        title: '机械师控制中心-安装完成'
+      }
+    },
+    {
+      path: '/unstalled',
+      name: 'Unstalled',
+      component: Unstalled,
+      meta: {
+        title: '机械师控制中心-安装完成'
       }
     },
     {
