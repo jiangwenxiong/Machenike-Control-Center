@@ -14,6 +14,7 @@
             <textarea class="ins_textArea"></textarea>
             <div class="next2" @click="$router.push({name:'Unstalled'})">卸载</div>
            <div class="next">取消</div>
+           
        </div>
   </div>
 </template>

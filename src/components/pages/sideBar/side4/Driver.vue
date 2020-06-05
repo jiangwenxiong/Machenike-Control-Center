@@ -19,7 +19,7 @@
           <div class="od_model">{{i.model}}</div>
         </div>
         <div class="od_edition">当前版本:&nbsp;{{i.edition}}</div>
-        <div class="od_state">{{i.state==1?'已最新':(i.state==2?'待更新':'高版本')}}</div>
+        <div class="od_state" @click="$router.push({name:'Side4Update'})">{{i.state==1?'已最新':(i.state==2?'待更新':'高版本')}}</div>
         <img class="od_line" src="~@/assets/img/sidebar/line.png" />
       </div>
     </div>

@@ -26,6 +26,7 @@ import Side2Optetting from '@/components/pages/sideBar/side2/OptimizeSetting' //
 
 //侧边栏4 官方驱动
 import Side4Driver from '@/components/pages/sideBar/side4/Driver' //官方驱动
+import Side4Update from '@/components/pages/sideBar/side4/Update' //官方驱动
 
 //侧边栏5 硬核软件
 import side5Hardcore from '@/components/pages/sideBar/side5/Hardcore' //硬核软件
@@ -193,6 +194,14 @@ export default new Router({
       path: '/officialdriver',
       name: 'Side4Driver',
       component: Side4Driver,
+      meta: {
+        title: '机械师控制中心-官方驱动'
+      }
+    },
+    {
+      path: '/driverupdate',
+      name: 'Side4Update',
+      component: Side4Update,
       meta: {
         title: '机械师控制中心-官方驱动'
       }
