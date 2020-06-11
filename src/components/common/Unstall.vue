@@ -3,7 +3,7 @@
        <div class="installBox">
            <img class="ins_logo" src="~@/assets/img/install/logo.png"/>
            <div class="ins_tips">欢迎使用MachenikeCC卸载向导</div>
-           <div class="ins_tips ins_tips2">本指南将知道您完成卸载“MachenikeCC”的过程<br>开始卸载之前，请确保“MachenikeCC”未运行</div>
+           <div class="ins_tips ins_tips2">本指南将指导您完成卸载“MachenikeCC”的过程<br>开始卸载之前，请确保“MachenikeCC”未运行</div>
            <div class="next2" @click="$router.push({name:'Unstalling'})">下一步</div>
            <div class="next" >取消</div>
        </div>

@@ -34,8 +34,9 @@
                     class="hw_descItem"
                     v-for="i,index in item.desc"
                     :class="'hw_descItem'+index"
-                    v-html="i"
+                    v-html="i" 
                   ></div>
+                  <div class="hw_more" v-show="item.name=='主硬盘'"  @click="showDetailsPage=true;">更多</div>
                   <div class="hw_desctit">{{item.desctit}}</div>
                   <div
                     class="hw_descNc"
@@ -259,6 +260,9 @@
             <div class="hw_deFooter"><span>扫描时间   2020-05-25 12：15</span></div>
         </div>
     </div>
+    <img class="bottomLogo bottomLogo1" src="~@/assets/img/side1/logo1.jpg" />
+    <img class="bottomLogo bottomLogo2" src="~@/assets/img/side1/logo2.jpg" />
+    <img class="bottomLogo bottomLogo3" src="~@/assets/img/side1/logo3.jpg" />
   </div>
 </template>
 
@@ -314,7 +318,7 @@ export default {
         {
           name: "主硬盘",
           icon: ItemIcon4,
-          desc: ["INTEL&nbsp;SSDPEKNW010TB<br>实际容量952GB"]
+          desc: ["INTEL&nbsp;SSDPEKNW010TB<br>实际容量952GB","INTEL&nbsp;SSDPEKNW010TB<br>实际容量952GB"]
         },
         {
           name: "主板",
@@ -473,6 +477,18 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
+.bottomLogo{
+     display block;
+     position absolute
+     bottom 36px;
+     right 34px
+  }
+  .bottomLogo2{
+    right 116px;
+  }
+  .bottomLogo1{
+    right 174px;
+  }
 .hardwareContant {
   height 100%
   width 100%
@@ -902,11 +918,13 @@ export default {
   height auto
   overflow hidden
   margin-top 6px
+ 
   .hw_infoItem {
     width 488px
     height auto;
     background url('~@/assets/img/side1/infobg.png') no-repeat 100% 100%
     margin-top 14px
+    position relative;
     display flex
     .hw_itemName {
       position relative
@@ -935,6 +953,14 @@ export default {
         font-size 12px
         display inline-block
       }
+      .hw_more{
+        font-size 12px;
+        position absolute
+        bottom 6px;
+        right 34px
+        border-bottom 1px solid #10abff;
+        cursor pointer;
+      }
       .hw_descItem1 {
         margin-left 20px
       }
@@ -947,5 +973,6 @@ export default {
       }
     }
   }
+  
 }
 </style>

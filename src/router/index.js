@@ -20,8 +20,10 @@ import Side1Management from '@/components/pages/sideBar/side1/Management' //系�
 
 //侧边栏2 游戏加速
 import Side2Optimization from '@/components/pages/sideBar/side2/Optimization' //性能优化
-import Side2Setting from '@/components/pages/sideBar/side2/Setting' //优化设置
+import Side2Setting from '@/components/pages/sideBar/side2/Setting' //设置
 import Side2Optetting from '@/components/pages/sideBar/side2/OptimizeSetting' //优化设置
+import Side2AllGame from '@/components/pages/sideBar/side2/AllGame' //所有游戏
+import Side2Performance from '@/components/pages/sideBar/side2/Performance' //性能统计
 
 
 //侧边栏4 官方驱动
@@ -180,6 +182,22 @@ export default new Router({
       component: Side2Optetting,
       meta: {
         title: '机械师控制中心-设置'
+      }
+    },
+    {
+      path: '/allgame',
+      name: 'Side2AllGame',
+      component: Side2AllGame,
+      meta: {
+        title: '机械师控制中心-所有游戏'
+      }
+    },
+    {
+      path: '/performance',
+      name: 'Side2Performance',
+      component: Side2Performance,
+      meta: {
+        title: '机械师控制中心-性能统计'
       }
     },
     {

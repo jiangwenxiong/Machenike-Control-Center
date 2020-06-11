@@ -160,4 +160,13 @@ body {
     cursor: pointer;
 
 }
+::-webkit-scrollbar{
+    width: 10px;
+    background:#1e2a5d;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #10aafd;
+    border-radius: 5px;
+  }
 /* input css end */

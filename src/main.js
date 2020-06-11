@@ -69,13 +69,21 @@ router.beforeEach((to, from, next) => {
       break;
     case 'Side2':
       store.commit("setTopList", [{
-          name: '性能优化',
+          name: '我的游戏',
           routerName: 'Side2Optimization'
+        },
+        {
+          name: '所有游戏',
+          routerName: 'Side2AllGame',
+        },
+        {
+          name: '性能统计',
+          routerName: 'Side2Performance',
         },
         {
           name: '设置',
           routerName: 'Side2Optetting',
-          padding: '50px'
+          padding:'50px'
         }
       ]);
       break;

@@ -3,8 +3,14 @@
     <!-- <div class="op_tit">优化游戏性能&nbsp;&nbsp;&nbsp;&nbsp;提升游戏体验</div>
     <div class="op_setting" @click="$router.push({ name: 'Side2Setting' })">优化设置</div> -->
     <!-- <img class="hw_chartBg" src="~@/assets/img/side2/bg.png" /> -->
+    <div class="searchBox">
+        <input class="search" type="text" placeholder="请输入游戏名称"/>
+        <div class="searchBtn">
+             <img class="seachIcon"  src="~@/assets/img/side2/sh.png" />
+        </div>
+    </div>
     <ul class="op_gameList">
-      <li class="op_gameItem" >
+      <!-- <li class="op_gameItem" >
         <img class="op_gameImg" src="/static/img/game.jpg" />
         <div class="op_mask op_allCom" v-show="allShowFast">
            <div class="op_allComTit">通用加速</div>
@@ -15,7 +21,7 @@
           <img class="op_flash"  v-show="allShowFast" src="~@/assets/img/side2/fb.png" />
         </div>
         
-      </li>
+      </li> -->
       <li class="op_gameItem" v-for="i in gameList" @mouseenter="i.showFast=true;" @mouseleave="i.showFast=false;">
         <img class="op_gameImg" src="/static/img/game.jpg" />
         <!-- <div class="op_btnArea">
@@ -26,7 +32,7 @@
         </div> -->
       
         <div class="op_mask">
-          <div v-show="i.showFast">
+          <!-- <div v-show="i.showFast">
            <div class="op_zd">不置顶</div>
            <div class="op_remove">
              <img class="op_removeIcon" src="~@/assets/img/side2/remove.png" />
@@ -45,13 +51,13 @@
                <div class="op_serverItem">当前区服：美服</div>
                <div class="op_serverItem">智能节点</div>
              </div>
-             </div>
+             </div> -->
            <div class="op_hover">英雄联盟LOL</div>
-           <img class="op_flash op_flash1" v-show="!i.showFast" @click="i.showFast=true" src="~@/assets/img/side2/f.png" />
-           <img class="op_flash"  v-show="i.showFast" @click="i.showFast=false" src="~@/assets/img/side2/fb.png" />
+           <!-- <img class="op_flash op_flash1" v-show="!i.showFast" @click="i.showFast=true" src="~@/assets/img/side2/f.png" />
+           <img class="op_flash"  v-show="i.showFast" @click="i.showFast=false" src="~@/assets/img/side2/fb.png" /> -->
         </div>
       </li>
-      <li class="op_gameItem op_addGame"></li>
+      <!-- <li class="op_gameItem op_addGame"></li> -->
     </ul>
     <div class="op_fail" v-show="loadState">
       <img class="op_failImg" src="/static/img/fail.png" />
@@ -92,7 +98,7 @@ export default {
   },
   mounted() {
     var that = this;
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < 15; index++) {
       const element = { game: index ,showFast:false};
       that.gameList.push(element);
     }
@@ -165,8 +171,8 @@ export default {
     margin-top 10px
     overflow-y auto
     .op_gameItem {
-      width 176px
-      height 229px
+      width 142px
+      height 184px
       border-radius 12px
       margin-right 24px
       margin-top 20px
@@ -233,7 +239,8 @@ export default {
          position relative
       }
       .op_gameImg {
-        width 100%
+        width 100%;
+        height 100%;
       }
       .op_mask {
         position absolute
@@ -249,7 +256,7 @@ export default {
           left 0
           background linear-gradient(to top, #000 0%, transparent)
           text-align left;
-          padding-left 16px
+          text-align center;
           color #fff
           line-height 34px
           font-size 12px
@@ -374,5 +381,36 @@ export default {
       left 24px;
     }
   }
+  
+}
+.searchBox{
+      height 40px;
+      width 308px;
+      position relative;
+      .searchBtn{
+          height 40px;
+          width 40px;
+          position absolute;
+          top 0;
+          right 0;
+          cursor pointer;
+          .seachIcon{
+              margin-top 10px;
+              margin-left 10px;
+          }
+      }
+      input{
+          display block;
+          height 40px;
+          width 308px;
+          border 1px solid #10a9fd
+          font-size 12px;
+          color #0b5b92;
+          padding-left 14px;
+      }
+      
+  }
+input::-webkit-input-placeholder{
+        color:#0b5b92;
 }
 </style>
