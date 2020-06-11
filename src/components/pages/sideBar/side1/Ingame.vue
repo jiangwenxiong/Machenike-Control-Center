@@ -10,7 +10,7 @@
       </div>
       <div class="ig_ts">小提示：功能仅在游戏中生效</div>
     </div>
-    <div class="ig_contant">
+    <div class="ig_contant" v-show="showSetting">
       <div class="ig_con ig_conLeft">
         <div class="ig_tips">
           <div class="ig_tipLeft"></div>热键
@@ -145,6 +145,11 @@
         </div>
       </div>
     </div>
+    <div v-show="!showSetting">
+    <div class="dk_text">游戏中实时监控硬件状态，不会影响游戏的体验，此更能仅在游戏中生效</div>
+    <div class="dk_titItem">游戏实时监控硬件，更了解您的电脑状态</div>
+    <img class="dk_screen" src="/static/img/game.png" />
+    </div>
   </div>
 </template>
 
@@ -157,6 +162,7 @@ export default {
       btnLeft: -1,
       btnLeft2: 13,
       elseSetting: true,
+      showSetting:false,
       styleMode: {
         name: "样式",
         Item: [
@@ -323,8 +329,10 @@ export default {
     btnClick() {
       if (this.btnLeft == "-1") {
         this.btnLeft = "17";
+        this.showSetting = true;
       } else {
         this.btnLeft = "-1";
+        this.showSetting = false;
       }
     },
     btnClick2() {
@@ -573,6 +581,22 @@ export default {
       border-radius 4px
       background #10abff
     }
+  }
+  .dk_text {
+    font-size 12px
+    width 100%
+    height 20px
+  }
+  .dk_titItem {
+    height 30px
+    width 330px
+    font-size 14px
+    line-height 30px
+  }
+  .dk_screen {
+    margin-top 20px
+    height 400px
+    margin-left -2px
   }
 }
 </style>
