@@ -184,7 +184,7 @@
           </div>
           <div class="pr_chartLineBox" id="tempLine"></div>
           <ul class="pr_projectBox">
-              <li v-for="item,index in itemList"><img class="hw_ItemIcon" :class="'hw_ItemIcon'+index" :src="item.icon" />{{item.name}}<span v-html="item.desc"></span></li>
+              <li v-for="item,index in itemList"><img class="hw_ItemIcon" :class="'hw_ItemIcon'+index" :src="item.icon" /><span class="noMl">{{item.name}}</span><span v-html="item.desc"></span></li>
           </ul>
         </div>
       </div>
@@ -1289,6 +1289,13 @@ export default {
           .hw_ItemIcon6,.hw_ItemIcon2,.hw_ItemIcon3{
               height 18px;
               top 10px;
+          }
+          span{
+              margin-left 20px;
+              opacity .7
+          }
+          .noMl{
+              margin-left 0;
           }
       }
   }
