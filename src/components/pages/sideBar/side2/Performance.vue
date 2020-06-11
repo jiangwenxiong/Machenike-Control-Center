@@ -137,6 +137,7 @@
               <div class="pr_value">
                 <div class="pr_vcon">125</div>
               </div>
+              
             </div>
             <div class="pr_doItem2 haveBorder">
               <div class="pr_tit">处理器</div>
@@ -144,6 +145,12 @@
                 <div class="pr_chart" id="cpuChart1"></div>
                 <div class="pr_chart pr_chart2" id="cpuChart2"></div>
               </div>
+               <div class="pe_xtips">
+              用电量&nbsp;≈
+              <span>
+                <img class="pe_icon" src="~@/assets/img/side2/f2.png" />1.588度
+              </span>
+            </div>
             </div>
             <div class="pr_doItem2 pr_doItem3 haveBorder">
               <div class="pr_tit">显卡</div>
@@ -152,12 +159,24 @@
                 <div class="pr_chart pr_chart2" id="cpuChart4"></div>
                 <div class="pr_chart pr_chart2" id="cpuChart5"></div>
               </div>
+               <div class="pe_xtips">
+              用电量&nbsp;≈
+              <span>
+                <img class="pe_icon" src="~@/assets/img/side2/f2.png" />1.588度
+              </span>
+            </div>
             </div>
             <div class="pr_doItem2 pr_doItem4">
               <div class="pr_tit">内存</div>
               <div class="pr_chartBox">
                 <div class="pr_chart" id="cpuChart6"></div>
               </div>
+               <div class="pe_xtips">
+              用电量&nbsp;≈
+              <span>
+                <img class="pe_icon" src="~@/assets/img/side2/f2.png" />1.588度
+              </span>
+            </div>
             </div>
           </div>
           <div class="pr_doInfo2">
@@ -1106,31 +1125,19 @@ export default {
         box-shadow inset 0px 0px 4px 0px #10abff
       }
     }
-    .pe_xtips {
-      margin-left 40px
-      span {
-        display inline-block
-        position relative
-        padding-left 12px
-        color #fde353
-        img {
-          position absolute
-          top 4px
-          left 4px
-        }
-      }
-      .pe_color2 {
-        color #fd7f53
-      }
-    }
+    
   }
   .pe_datailInfo {
-    height 146px
+    height 152px
     width 100%
     padding-left 30px
     display flex
     margin-top 20px
     font-size 12px
+    .pe_xtips{
+        margin-left 0;
+        margin-top 10px;
+    }
     .pr_doItem1 {
       width 116px
       .pr_value {
@@ -1179,6 +1186,7 @@ export default {
     }
     .pr_doItem4 {
       width 130px
+      padding 0 10px;
     }
     .haveBorder {
       border-right solid 1px #10a9fd
@@ -1299,5 +1307,22 @@ export default {
           }
       }
   }
+  .pe_xtips {
+      margin-left 40px
+      span {
+        display inline-block
+        position relative
+        padding-left 12px
+        color #fde353
+        img {
+          position absolute
+          top 4px
+          left 4px
+        }
+      }
+      .pe_color2 {
+        color #fd7f53
+      }
+    }
 }
 </style>
