@@ -24,6 +24,7 @@ import Side2Setting from '@/components/pages/sideBar/side2/Setting' //设置
 import Side2Optetting from '@/components/pages/sideBar/side2/OptimizeSetting' //优化设置
 import Side2AllGame from '@/components/pages/sideBar/side2/AllGame' //所有游戏
 import Side2Performance from '@/components/pages/sideBar/side2/Performance' //性能统计
+import GameBooster from '@/components/pages/sideBar/side2/GameBooster' //性能统计
 
 
 //侧边栏4 官方驱动
@@ -198,6 +199,14 @@ export default new Router({
       component: Side2Performance,
       meta: {
         title: '机械师控制中心-性能统计'
+      }
+    },
+    {
+      path: '/gamebooster',
+      name: 'GameBooster',
+      component: GameBooster,
+      meta: {
+        title: '机械师控制中心-加速时长'
       }
     },
     {

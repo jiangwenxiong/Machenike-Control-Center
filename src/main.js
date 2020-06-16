@@ -101,6 +101,13 @@ router.beforeEach((to, from, next) => {
 
       ]);
       break;
+      case 'GameBooster':
+        store.commit("setTopList", [{
+            name: '加速时长',
+          }
+  
+        ]);
+        break;
 
     default:
       break;

@@ -48,7 +48,7 @@
              </div>
            <div class="op_hover">英雄联盟LOL</div>
            <img class="op_flash op_flash1" v-show="!i.showFast" @click="i.showFast=true" src="~@/assets/img/side2/f.png" />
-           <img class="op_flash"  v-show="i.showFast" @click="i.showFast=false" src="~@/assets/img/side2/fb.png" />
+           <img class="op_flash"  v-show="i.showFast" @click="$router.push({name:'GameBooster'})" src="~@/assets/img/side2/fb.png" />
         </div>
       </li>
       <li class="op_gameItem op_addGame"></li>
