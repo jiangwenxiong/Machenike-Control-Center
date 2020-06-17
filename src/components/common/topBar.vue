@@ -61,7 +61,6 @@ export default {
     return {
       msg: "TopBar Mounted",
       showsettingBox: false,
-      activeIndex: 0,
       featureList: [
         {
           name: "设置",
@@ -99,6 +98,9 @@ export default {
   computed: {
     topItems() {
       return this.$store.getters.getTopList;
+    },
+    activeIndex(){
+      return this.$store.getters.getTopBarActiveIndex;
     }
   },
   mounted() {
@@ -107,7 +109,7 @@ export default {
   },
   methods: {
     itemClick(index, item) {
-      this.activeIndex = index;
+      this.$store.commit("setTopBarActiveIndex", index);
       if (item.routerName) {
         this.$router.push({ name: item.routerName });
       }

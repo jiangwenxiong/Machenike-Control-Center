@@ -100,6 +100,7 @@ export default {
         this.activeIndex = index;
         sessionStorage.setItem("activeIndex", index);
         if (item.routeName) this.$router.push({ name: item.routeName });
+        this.$store.commit("setTopBarActiveIndex", 0);
       }
     }
   }

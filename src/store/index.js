@@ -8,18 +8,27 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
         //存放的键值对就是所要管理的状态
-        topBarItems:[]
+        topBarItems:[],
+        topBarActiveIndex:0
     },
     getters:{
         getTopList(state){
             return state.topBarItems;
+        },
+        getTopBarActiveIndex(state){
+            return state.topBarActiveIndex;
         }
     },
     mutations:{
         setTopList(state,data){
             sessionStorage.setItem('toplist', JSON.stringify(data));
             state.topBarItems = data;
+            console.log(state.topBarActiveIndex);
+        },
+        setTopBarActiveIndex(state,data){
+            state.topBarActiveIndex = data;
         }
+        
     }
 })
 
