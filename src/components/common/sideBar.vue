@@ -3,12 +3,12 @@
     <img class="sideBg" src="/static/img/sideBg.png" />
     <ul class="sideBox">
       <li class="loginCon">
-        <img class="loginIcon" src="~@/assets/img/sidebar/loginicon.png" />
-        <div class="loginTit">
+        <img class="loginIcon" src="~@/assets/img/sidebar/logo.png" />
+        <!-- <div class="loginTit">
           <span class="loginCN">登&nbsp;&nbsp;录</span>
           <br />
           <span class="loginEN">SIGN&nbsp;IN</span>
-        </div>
+        </div> -->
         <img class="line lineLong" src="~@/assets/img/sidebar/line.png" />
       </li>
       <li class="sideItem" v-for="item,index in sideBarList" @click="itemClick(index,item)">
@@ -139,7 +139,7 @@ export default {
   height 48px
   position absolute
   top 16px
-  left 30px
+  left 50px
 }
 .sideBox .loginCon .loginTit {
   height 40px
