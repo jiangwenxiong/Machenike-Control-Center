@@ -3,6 +3,11 @@
         <img class="up_logo" src="~@/assets/img/install/logo.png"/>
         <div class="up_tips up_tips1">当前版本：4.3.1111</div>
         <div class="up_tips">最新版本：4.3.1112<span>忽略此版本</span></div>
+        <div class="up_barBox">
+          <div class="up_progress">{{progress}}%</div>
+          <div class="up_speed">868KB/S</div>
+          <div class="up_bar" :style="{'width':progress+'%'}"> </div>
+        </div>
         <div class="up_btnBox">
              <div class="up_btn up_btn1" @click="$router.push({name:'Side4Driver'})">暂不更新</div>
              <div class="up_btn up_btn2" >更新</div>
@@ -20,7 +25,8 @@ export default {
   name: '',
   data () {
     return {
-      msg: ''
+      msg: '',
+      progress:50,
     }
   },
   mounted (){
@@ -44,6 +50,33 @@ export default {
         display block
         margin 0 auto;
         margin-top 40px;
+    }
+    .up_barBox{
+      width 320px;
+      height 10px;
+      margin 0 auto;
+      margin-top 40px;
+      margin-bottom 20px;
+      background-color #141a36;
+      border-radius 10px;
+      position relative;
+      .up_progress{
+        font-size 12px;
+        position absolute;
+        right 0;
+        top -20px;
+      }
+      .up_speed{
+        font-size 12px;
+        position absolute;
+        left 0;
+        top -20px;
+      }
+      .up_bar{
+        height 10px;
+        border-radius 10px;
+        background linear-gradient(to right, #0962db 0%, #62fff2 100%)
+      }
     }
     .up_tips{
         height 20px;
