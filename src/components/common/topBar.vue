@@ -68,24 +68,24 @@ export default {
           activeIcon: SetIcon1w,
           routeName: "Setting"
         },
-        {
-          name: "更新日志",
-          icon: SetIcon2b,
-          activeIcon: SetIcon2w,
-          routeName: "Setting"
-        },
+        // {
+        //   name: "更新日志",
+        //   icon: SetIcon2b,
+        //   activeIcon: SetIcon2w,
+        //   routeName: "Setting"
+        // },
         {
           name: "关于我们",
           icon: SetIcon3b,
           activeIcon: SetIcon3w,
           routeName: "Setting"
         },
-        {
-          name: "注销",
-          icon: SetIcon4b,
-          activeIcon: SetIcon4w,
-          routeName: "Login"
-        },
+        // {
+        //   name: "注销",
+        //   icon: SetIcon4b,
+        //   activeIcon: SetIcon4w,
+        //   routeName: "Login"
+        // },
         {
           name: "退出",
           icon: SetIcon5b,
@@ -217,7 +217,7 @@ export default {
 }
 .settingsBox {
   width 104px
-  height 150px
+  // height 150px
   position absolute
   left -20px
   top 36px
@@ -228,7 +228,7 @@ export default {
   height 100%
   position relative
   background url('~@/assets/img/login/setbg.png') no-repeat 100% 100%
-  padding-top 9px
+  // padding-top 9px
 }
 .settingsItem {
   height 28px
