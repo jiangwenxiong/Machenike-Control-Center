@@ -92,7 +92,7 @@ export default {
   top: 50%;
   left: 50%;
   margin-top: -87px;
-  margin-left: -78px;
+  margin-left: -90px;
   background: #050b24;
   font-size: 12px;
   color: #10a9fd;
