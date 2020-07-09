@@ -36,7 +36,7 @@
       </li>
       <li class="topRbtn">
         \
-        <img class="close" src="~@/assets/img/topbar/close.png" />
+        <img class="close" @click="setItemClick2()" src="~@/assets/img/topbar/close.png" />
       </li>
     </ul>
   </div>
@@ -121,6 +121,12 @@ export default {
       }
       this.$router.push({ name: item.routeName });
       sessionStorage.removeItem("activeIndex");
+    },
+     setItemClick2() {
+   
+        this.$emit("show-logout", true);
+        return false;
+      
     }
   }
 };

@@ -14,11 +14,14 @@
         </div>
         <div class="logContant">
           <div class="logtips">
-            <img class="baseTh" src="~@/assets/img/login/th.png" />确定注销吗？
+            <img class="baseTh" src="~@/assets/img/login/th.png" />请选择关闭操作
           </div>
-          <div class="logBtn">确定</div>
-          <div class="logBtn logBtn2" @click="showLogout=false">取消</div>
+          <div class="logBtn">最小化程序</div>
+          <div class="logBtn logBtn2" @click="showLogout=false">退出程序</div>
+           
         </div>
+        <div class="rember"  @click="isRember=!isRember"> <img class="ins_check" v-show="isRember" src="~@/assets/img/install/check.png"/></div>
+          <div class="remberTs"  @click="isRember=!isRember">不再提示</div>
       </div>
     </div>
     <div class="installMask">
@@ -36,7 +39,8 @@ export default {
   name: "App",
   data() {
     return {
-      showLogout: false
+      showLogout: false,
+      isRember:false
     };
   },
   components: {
@@ -78,16 +82,17 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
+  background: rgba(0,0,0,.5);
   z-index: 99999;
 }
 .logoutCon {
   width: 342px;
-  height: 134px;
+  height: 164px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -67px;
-  margin-left: -78 px;
+  margin-top: -87px;
+  margin-left: -78px;
   background: #050b24;
   font-size: 12px;
   color: #10a9fd;
@@ -122,20 +127,42 @@ export default {
   position: relative;
 }
 .logBtn {
-  width: 60px;
+  width: 100px;
   height: 24px;
   line-height: 24px;
   text-align: center;
   position: absolute;
-  bottom: 14px;
-  left: 80px;
+  bottom: 4px;
+  left: 50px;
   border: 1px solid #10a9fd;
   box-shadow: inset 0px 0px 5px 2px #10abff;
   cursor: pointer;
 }
 .logBtn2 {
-  left: 200px;
+  left: 190px;
   background: #10a9fd;
   color: #fff;
 }
+ .rember{
+      position:absolute;
+      height:10px;
+      width: 10px;
+      border: 1px solid #10a9fd;
+      border-radius: 10px;
+      bottom: 8px;
+      left: 10px;
+      cursor: pointer
+    }
+    .ins_check{
+        width: 6px;
+        margin-top: 2px;
+        margin-left: 1px;
+        cursor: pointer
+      }
+    .remberTs{
+      position: absolute;
+      bottom: 6px;
+      left: 24px;
+      cursor: pointer
+    }
 </style>
